@@ -89,7 +89,7 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
   <div class="intro"><p class="eyebrow">ИНСТРУМЕНТ · ПЕРВАЯ ВЕРСИЯ</p><h2>Ваше занятие.<br><em>Ваша последовательность.</em></h2><p class="muted">Выберите параметры, чтобы получить предварительный черновик занятия из трёх обязательных этапов.</p></div>
   <form class="form" id="planner-form">
     <label for="duration">Продолжительность
-      <select id="duration" name="duration"><option value="30">30 минут</option><option value="45" selected>45 минут</option><option value="60">60 минут</option><option value="75">75 минут</option><option value="90">90 минут</option></select>
+      <select id="duration" name="duration"><option value="30">30 минут</option><option value="45">45 минут</option><option value="60" selected>60 минут</option><option value="75">75 минут</option><option value="90">90 минут</option></select>
     </label>
     <label for="level">Уровень группы
       <select id="level" name="level"><option value="beginner">Начальный</option><option value="intermediate" selected>Средний</option><option value="intermediate-advanced">Средний–сложный</option><option value="advanced">Продвинутый</option><option value="mixed">Смешанная группа</option></select>
@@ -132,6 +132,7 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
 </section>
 </main>
 <footer class="footer"><strong>Pilates by emoveo</strong><span>Осознанное движение. Продуманный процесс.</span><span>© <span id="year"></span> emoveo</span></footer>
+<script src="js/generator.v1.js"></script>
 <script>
 (() => {
   "use strict";
@@ -139,178 +140,239 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
   const form = $("planner-form");
   const result = $("result");
   const status = $("form-status");
+  const submitButton = form.querySelector('button[type="submit"]');
   $("year").textContent = new Date().getFullYear();
 
-  const focusData = {
-    posture: {
-      name: "осанка и выравнивание тела",
-      warm: "Начните с спокойного дыхания, мягкой мобилизации грудного отдела и плеч. Найдите нейтральное положение таза и позвоночника без напряжения.",
-      main: "Сосредоточьтесь на контроле положения корпуса, мягкой стабилизации лопаток и подвижности грудного отдела. Чередуйте упражнения лёжа, сидя и стоя, если это подходит группе.",
-      stretch: "Завершите мягким раскрытием грудной клетки, комфортной растяжкой грудных мышц и плеч, а также расслаблением спины."
-    },
-    arms: {
-      name: "руки и плечевой пояс",
-      warm: "Разогрейте кисти, локти и плечи круговыми движениями в комфортной амплитуде. Добавьте дыхание и мягкую мобилизацию грудного отдела.",
-      main: "Включите контролируемые движения рук, работу плечевого пояса и стабилизацию лопаток. Сохраняйте свободное дыхание и избегайте подъёма плеч к ушам.",
-      stretch: "Мягко растяните мышцы груди, плеч и рук. Завершите спокойным дыханием и расслаблением шеи."
-    },
-    core: {
-      name: "мышцы кора и стабильность",
-      warm: "Начните с дыхания без задержки, мягких наклонов таза и поиска удобного положения позвоночника.",
-      main: "Используйте контролируемые упражнения на стабильность корпуса в устойчивых исходных положениях. Добавляйте движения рук или ног только при сохранении контроля.",
-      stretch: "Мягко расслабьте спину, ягодичные мышцы и заднюю поверхность ног; не форсируйте амплитуду."
-    },
-    legs: {
-      name: "ноги и ягодицы",
-      warm: "Подготовьте тазобедренные и голеностопные суставы: мягкие движения стопами, сгибание и разгибание ног, комфортные переносы веса.",
-      main: "Чередуйте упражнения для ягодичных мышц, бёдер и контроля положения коленей. Следите, чтобы стопы оставались устойчивыми, а движения выполнялись без боли.",
-      stretch: "Завершите мягкой растяжкой ягодичных мышц, передней и задней поверхности бёдер и икроножных мышц."
-    },
-    mobility: {
-      name: "подвижность позвоночника и суставов",
-      warm: "Начните с дыхания и небольших плавных движений позвоночника, плеч, таза и голеностопа.",
-      main: "Используйте контролируемую мобилизацию позвоночника и суставов в доступной амплитуде. Избегайте резких движений и не стремитесь к максимальному диапазону.",
-      stretch: "Оставьте время для спокойной растяжки спины, бёдер, грудного отдела и плеч без пружинящих движений."
-    },
-    balance: {
-      name: "баланс и координация",
-      warm: "Подготовьте стопы и голеностоп, выполните мягкие переносы веса и несколько спокойных дыхательных циклов.",
-      main: "Включите контролируемые переносы веса и простые упражнения на координацию. При необходимости выполняйте их рядом с устойчивой опорой.",
-      stretch: "Мягко растяните икроножные мышцы, заднюю поверхность ног и плечи. Завершите устойчивым удобным положением и спокойным дыханием."
-    },
-    full: {
-      name: "всё тело",
-      warm: "Постепенно разогрейте тело: дыхание, мобилизация позвоночника, плеч, таза и голеностопа.",
-      main: "Сбалансируйте работу корпуса, таза, ног и плечевого пояса; чередуйте стабильность, подвижность и координацию.",
-      stretch: "Последовательно растяните основные группы мышц всего тела в комфортном диапазоне."
-    },
-    stretch: {
-      name: "растяжка и гибкость",
-      warm: "Начните со спокойного дыхания и малых плавных движений суставов, постепенно подготавливая тело к растяжке.",
-      main: "Используйте мягкие контролируемые положения для подвижности бёдер, грудного отдела, плеч и задней поверхности ног. Не форсируйте амплитуду.",
-      stretch: "Завершите комфортными положениями для ног, бёдер, спины, грудной клетки и плеч без боли и пружинящих движений."
-    },
-    breathing: {
-      name: "дыхание и расслабление",
-      warm: "Предложите удобное положение, спокойное дыхание без задержек и небольшие движения плечами и грудной клеткой.",
-      main: "Чередуйте мягкие движения позвоночника, расслабление плечевого пояса и спокойное дыхание. Дайте участникам возможность снизить интенсивность или сделать паузу.",
-      stretch: "Завершите комфортной растяжкой всего тела и несколькими спокойными дыхательными циклами без принуждения к глубине вдоха."
+  let libraryPromise = null;
+  function loadLibrary() {
+    if (!libraryPromise) {
+      libraryPromise = fetch("data/exercise-library.v1.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("Не удалось загрузить библиотеку упражнений (" + response.status + ").");
+          return response.json();
+        })
+        .then((data) => {
+          if (!data || !Array.isArray(data.cards) || !data.cards.length) {
+            throw new Error("Библиотека упражнений пуста или имеет неверный формат.");
+          }
+          if (!window.PilatesGeneratorV1) {
+            throw new Error("Генератор не загрузился. Обновите страницу или проверьте подключение скрипта.");
+          }
+          return data;
+        })
+        .catch((error) => {
+          libraryPromise = null;
+          throw error;
+        });
     }
-  };
+    return libraryPromise;
+  }
 
+  const focusGoals = {
+    posture: ["posture", "shoulders", "scapular_control", "upper_back"],
+    arms: ["arms", "shoulders", "upper_back", "scapular_control"],
+    core: ["core", "core_control"],
+    legs: ["legs", "glutes", "hips"],
+    mobility: ["mobility", "spine_mobility", "thoracic_rotation"],
+    balance: ["balance", "coordination"],
+    full: ["posture", "core", "legs", "shoulders", "mobility"],
+    stretch: ["flexibility", "stretch", "hamstrings", "glutes", "hips", "chest", "side_body"],
+    breathing: ["breathing", "breath", "relaxation", "mobility"]
+  };
   const focusLabels = {
-    posture:"Осанка и выравнивание тела", arms:"Руки и плечевой пояс",
-    core:"Мышцы кора и стабильность", legs:"Ноги и ягодицы",
-    mobility:"Подвижность позвоночника и суставов", balance:"Баланс и координация",
-    full:"Всё тело", stretch:"Растяжка и гибкость", breathing:"Дыхание и расслабление"
+    posture: "Осанка и выравнивание тела", arms: "Руки и плечевой пояс",
+    core: "Мышцы кора и стабильность", legs: "Ноги и ягодицы",
+    mobility: "Подвижность позвоночника и суставов", balance: "Баланс и координация",
+    full: "Всё тело", stretch: "Растяжка и гибкость", breathing: "Дыхание и расслабление"
   };
   const levelLabels = {
-    beginner:"начальный", intermediate:"средний",
-    "intermediate-advanced":"средний–сложный", advanced:"продвинутый", mixed:"смешанная группа"
+    beginner: "Начальный", intermediate: "Средний",
+    "intermediate-advanced": "Средний–сложный", advanced: "Продвинутый", mixed: "Смешанная группа"
+  };
+  const engineLevels = {
+    beginner: "beginner", intermediate: "medium",
+    "intermediate-advanced": "intermediate", advanced: "advanced", mixed: "mixed"
   };
   const equipmentLabels = {
-    none:"без дополнительного оборудования", mat:"коврик", band:"эластичная лента",
-    ball:"малый мяч", ring:"кольцо для пилатеса", block:"блок для йоги",
-    weights:"лёгкие гантели", chair:"стул или устойчивая опора",
-    mixed:"коврик и несколько видов малого оборудования"
+    none: "Без дополнительного оборудования", mat: "Коврик",
+    band: "Коврик и эластичная лента", ball: "Коврик и малый мяч",
+    ring: "Коврик и кольцо для пилатеса", block: "Коврик и блок для йоги",
+    weights: "Коврик и лёгкие гантели", chair: "Коврик и стул/устойчивая опора",
+    mixed: "Коврик и несколько видов малого оборудования"
   };
-  function equipmentAdvice(value) {
-    const advice = {
-      none:"Используйте вес собственного тела и оставьте достаточно свободного пространства.",
-      mat:"Проверьте, чтобы коврики не скользили и вокруг участников было достаточно места.",
-      band:"Перед началом проверьте целостность ленты и выберите комфортное сопротивление.",
-      ball:"Используйте мяч подходящего размера и контролируйте, чтобы он не выскальзывал.",
-      ring:"Не сжимайте кольцо с чрезмерным усилием; сохраняйте комфортное положение запястий и плеч.",
-      block:"Проверьте устойчивость блока и используйте его только в подходящих положениях.",
-      weights:"Выбирайте лёгкий вес, который позволяет сохранять технику и свободное дыхание.",
-      chair:"Используйте устойчивый стул без колёс, поставленный на нескользкую поверхность.",
-      mixed:"Заранее подготовьте только знакомое группе оборудование и объясните безопасный способ его использования."
+  function equipmentOptions(value) {
+    const options = {
+      none: [],
+      mat: ["mat"],
+      band: ["mat", "band"],
+      ball: ["mat", "ball"],
+      ring: ["mat", "ring"],
+      block: ["mat", "block"],
+      weights: ["mat", "weights"],
+      chair: ["mat", "chair"],
+      mixed: ["mat", "wall", "chair", "band", "ball", "ring", "block", "weights"]
     };
-    return advice[value] || advice.none;
+    return options[value] || ["mat"];
   }
-  function levelAdvice(value) {
-    if (value === "beginner") return "Начальный уровень: выбирайте простые исходные положения, небольшую амплитуду и больше времени на объяснение техники.";
-    if (value === "intermediate") return "Средний уровень: поддерживайте ровный темп, сочетайте контроль и подвижность, усложняйте движения постепенно.";
-    if (value === "intermediate-advanced") return "Средний–сложный уровень: добавляйте координацию и более продолжительные серии только при устойчивой технике и свободном дыхании.";
-    if (value === "advanced") return "Продвинутый уровень: предлагайте сложные варианты только при хорошем контроле движения; качество важнее количества повторений.";
-    return "Смешанная группа: показывайте базовый вариант всем и отдельное усложнение подготовленным участникам. Не требуйте от новичков повторять сложный вариант.";
-  }
+  const stageLabels = {
+    warm_up: "1. Разминка",
+    main: "2. Основной комплекс",
+    stretch: "3. Завершение и растяжка"
+  };
   function escapeHtml(value) {
-    return String(value).replace(/[&<>"']/g, (char) => ({
-      "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+    return String(value == null ? "" : value).replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
     }[char]));
   }
+  function listHtml(items) {
+    if (!Array.isArray(items) || !items.length) return "";
+    return "<ol>" + items.map((item) => "<li>" + escapeHtml(item) + "</li>").join("") + "</ol>";
+  }
+  function equipmentNote(value) {
+    if (value === "none") return "Упражнения с обязательным оборудованием исключены. Убедитесь, что поверхность и пространство подходят для выбранных движений.";
+    if (value === "chair") return "Используйте устойчивый стул без колёс; опора не должна скользить.";
+    if (value === "mixed") return "Перед занятием проверьте устойчивость опор и состояние оборудования.";
+    return "Используйте только доступное и исправное оборудование. Если карточка не подходит по инвентарю, замените её до занятия.";
+  }
+  function cardText(card) {
+    const lines = [
+      card.name_ru,
+      "Исходное положение: " + (card.starting_position || "не указано"),
+      "Техника: " + ((card.technique_steps || []).join("; ")),
+      "Дозировка: " + (card.dosage || "по самочувствию и контролю техники"),
+      "Дыхание: " + (card.breathing || "не задерживать дыхание"),
+      "Оборудование: " + (card.equipment || "не требуется"),
+      "Упрощение: " + (card.easier_option || "не указано"),
+      "Усложнение: " + (card.progression_option || "не указано"),
+      "Безопасность: " + (card.safety_notes || "проверить пригодность упражнения для группы")
+    ];
+    if (card.demonstration_url) lines.push("Демонстрация: " + card.demonstration_url);
+    else lines.push("Видео: ссылка на точную демонстрацию пока не проверена.");
+    return lines.join("\n");
+  }
+  function renderCard(card) {
+    const video = card.demonstration_url
+      ? '<p><a href="' + escapeHtml(card.demonstration_url) + '" target="_blank" rel="noopener noreferrer">Открыть демонстрацию</a></p>'
+      : '<p class="muted">Видео: точная демонстрация пока не проверена.</p>';
+    return '<article class="stage exercise-card">' +
+      '<span class="time">' + escapeHtml(card.estimated_active_minutes || "—") + ' мин</span>' +
+      '<h4>' + escapeHtml(card.name_ru) + '</h4>' +
+      '<p class="muted">' + escapeHtml(card.id) + ' · ' + escapeHtml(card.equipment || "Без оборудования") + '</p>' +
+      '<p><strong>Исходное положение:</strong> ' + escapeHtml(card.starting_position || "не указано") + '</p>' +
+      '<strong>Техника</strong>' + listHtml(card.technique_steps) +
+      '<p><strong>Дозировка:</strong> ' + escapeHtml(card.dosage || "определить по группе") + '</p>' +
+      '<p><strong>Дыхание:</strong> ' + escapeHtml(card.breathing || "не задерживать дыхание") + '</p>' +
+      '<p><strong>Упрощение:</strong> ' + escapeHtml(card.easier_option || "не указано") + '</p>' +
+      '<p><strong>Вариант усложнения:</strong> ' + escapeHtml(card.progression_option || "не указано") + '</p>' +
+      '<p><strong>Меры предосторожности:</strong> ' + escapeHtml(card.safety_notes || "Проверьте пригодность упражнения для группы.") + '</p>' +
+      video + '</article>';
+  }
+  function buildPlanText(plan, focus, level, equipment) {
+    const out = [
+      "Pilates by emoveo — черновик занятия",
+      "Целевая длительность: " + plan.targetMinutes + " минут",
+      "Фокус: " + focusLabels[focus],
+      "Уровень: " + levelLabels[level],
+      "Оборудование: " + equipmentLabels[equipment],
+      ""
+    ];
+    plan.stages.forEach((stage) => {
+      out.push(stageLabels[stage.stage] + " — цель " + stage.targetMinutes + " мин; упражнения " +
+        stage.estimatedSelectedMinutes + " мин; остаток " + stage.remainingMinutes + " мин.");
+      stage.exercises.forEach((card, index) => {
+        out.push((index + 1) + ". " + cardText(card));
+        out.push("");
+      });
+      if (stage.note) out.push("Внимание: " + stage.note);
+      out.push("");
+    });
+    out.push("Паузы: " + plan.restBreaksTotalSeconds + " секунд суммарно; переходы не включены в расчёт.");
+    out.push(equipmentNote(equipment));
+    out.push("Общий шаблон, не медицинская рекомендация. Инструктор должен адаптировать упражнения под группу.");
+    return out.join("\n");
+  }
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    submitButton.disabled = true;
+    submitButton.textContent = "Формируем…";
+    status.textContent = "Загружаю библиотеку и подбираю упражнения…";
     try {
       const duration = Number($("duration").value);
       const level = $("level").value;
       const focus = $("focus").value;
       const equipment = $("equipment").value;
-      const selected = focusData[focus];
-      if (!selected || !levelLabels[level] || !equipmentLabels[equipment] || !Number.isFinite(duration)) {
-        throw new Error("Проверьте выбранные параметры и попробуйте ещё раз.");
-      }
-      const warmTime = Math.round(duration * 0.25);
-      const stretchTime = Math.round(duration * 0.25);
-      const mainTime = duration - warmTime - stretchTime;
-      const stages = [
-        {name:"1. Разминка", time:warmTime, purpose:"Подготовить дыхание, внимание и суставы к движению.", text:selected.warm},
-        {name:"2. Основной комплекс", time:mainTime, purpose:"Основная часть с акцентом: " + selected.name + ".", text:selected.main},
-        {name:"3. Завершение и растяжка", time:stretchTime, purpose:"Постепенно снизить интенсивность и завершить занятие.", text:selected.stretch}
-      ];
-      const levelNote = levelAdvice(level);
-      const equipmentNote = equipmentAdvice(equipment);
-      const planText = [
-        "Pilates by emoveo — черновик занятия",
-        duration + " минут · " + focusLabels[focus],
-        "Уровень: " + levelLabels[level],
-        "Оборудование: " + equipmentLabels[equipment],
-        "",
-        ...stages.flatMap(stage => [stage.name + " — " + stage.time + " минут", stage.purpose, stage.text, ""]),
-        "Подсказки инструктору: " + levelNote,
-        "Оборудование: " + equipmentNote,
-        "Общий шаблон, не медицинская рекомендация."
-      ].join("\n");
+      if (!Number.isFinite(duration) || duration < 15) throw new Error("Выберите корректную продолжительность занятия.");
+      if (!focusGoals[focus] || !engineLevels[level] || !equipmentLabels[equipment]) throw new Error("Проверьте выбранные параметры.");
+      const data = await loadLibrary();
+      const plan = window.PilatesGeneratorV1.generate(data, {
+        totalMinutes: duration,
+        level: engineLevels[level],
+        goals: focusGoals[focus],
+        equipment: equipmentOptions(equipment)
+      });
+      const validation = plan.validation || { errors: [], warnings: [] };
+      const stagesHtml = plan.stages.map((stage) => {
+        const shortage = stage.remainingMinutes > 0.01
+          ? '<div class="coach"><strong>Не заполнено по времени:</strong> ' + escapeHtml(stage.remainingMinutes) +
+            ' мин. Не растягивайте упражнения искусственно — добавьте проверенные карточки или скорректируйте план.</div>'
+          : "";
+        const exercises = stage.exercises.length
+          ? stage.exercises.map(renderCard).join("")
+          : '<div class="empty">В библиотеке не найдено подходящих упражнений для этого этапа и выбранного оборудования.</div>';
+        return '<section class="plan-stage"><div class="resulthead"><div><p class="eyebrow">' +
+          escapeHtml(stageLabels[stage.stage]) + '</p><h3>Цель: ' + escapeHtml(stage.targetMinutes) +
+          ' мин · выбрано: ' + escapeHtml(stage.estimatedSelectedMinutes) + ' мин</h3></div></div>' +
+          exercises + shortage + '</section>';
+      }).join("");
+      const warnings = (validation.warnings || []).map((item) => "<li>" + escapeHtml(item) + "</li>").join("");
       result.innerHTML =
         '<div class="resulthead"><div><p class="eyebrow">ЧЕРНОВИК ЗАНЯТИЯ</p><h3>' +
-        duration + ' минут · ' + escapeHtml(focusLabels[focus]) +
+        escapeHtml(duration) + ' минут · ' + escapeHtml(focusLabels[focus]) +
         '</h3></div><button class="btn" id="copy-plan" type="button">Копировать план</button></div>' +
-        '<p class="muted">Уровень: ' + escapeHtml(levelLabels[level]) + ' · Оборудование: ' + escapeHtml(equipmentLabels[equipment]) + '</p>' +
-        '<div class="stagegrid">' + stages.map(stage =>
-          '<article class="stage"><span class="time">' + stage.time + ' мин</span><h4>' + escapeHtml(stage.name) +
-          '</h4><p><strong>' + escapeHtml(stage.purpose) + '</strong></p><p>' + escapeHtml(stage.text) + '</p></article>'
-        ).join("") + '</div>' +
-        '<div class="coach"><strong>Подсказки инструктору</strong><br>' + escapeHtml(levelNote) +
-        '<br>' + escapeHtml(equipmentNote) +
-        '<br>Между этапами оставляйте время на переходы и проверку самочувствия группы.</div>';
+        '<p class="muted">Уровень: ' + escapeHtml(levelLabels[level]) + ' · Оборудование: ' +
+        escapeHtml(equipmentLabels[equipment]) + '</p>' +
+        '<div class="coach"><strong>Активное время по карточкам:</strong> ' +
+        escapeHtml(plan.estimatedActiveMinutes) + ' мин из целевых ' + escapeHtml(plan.targetMinutes) +
+        ' мин. Две паузы по 15 секунд учитываются отдельно; переходы не входят в расчёт.</div>' +
+        stagesHtml +
+        '<div class="coach"><strong>Перед занятием</strong><br>' + escapeHtml(equipmentNote(equipment)) +
+        '<br>Проверьте ограничения и самочувствие участников. При боли, головокружении или необычных симптомах упражнение следует прекратить.</div>' +
+        (warnings ? '<div class="coach"><strong>Примечания генератора</strong><ul>' + warnings + '</ul></div>' : "");
       $("copy-plan").addEventListener("click", async () => {
         const button = $("copy-plan");
         try {
+          const text = buildPlanText(plan, focus, level, equipment);
           if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(planText);
+            await navigator.clipboard.writeText(text);
           } else {
-            const textArea = document.createElement("textarea");
-            textArea.value = planText;
-            textArea.style.position = "fixed";
-            textArea.style.opacity = "0";
-            document.body.appendChild(textArea);
-            textArea.select();
+            const area = document.createElement("textarea");
+            area.value = text;
+            area.style.position = "fixed";
+            area.style.opacity = "0";
+            document.body.appendChild(area);
+            area.select();
             const copied = document.execCommand("copy");
-            textArea.remove();
-            if (!copied) throw new Error("Копирование недоступно в этом браузере.");
+            area.remove();
+            if (!copied) throw new Error("Копирование недоступно.");
           }
           button.textContent = "Скопировано ✓";
         } catch (error) {
-          button.textContent = "Не удалось скопировать";
-          status.textContent = "План создан. Выделите текст вручную, если копирование недоступно.";
+          status.textContent = "План создан, но скопировать его автоматически не удалось. Можно выделить текст вручную.";
         }
       });
-      status.textContent = "Черновик создан. Проверьте план и адаптируйте его под группу.";
-      result.scrollIntoView({behavior:"smooth", block:"start"});
+      status.textContent = validation.errors && validation.errors.length
+        ? "Черновик создан, но проверка нашла замечания. Проверьте план перед занятием."
+        : "Черновик создан. Проверьте длительность этапов и адаптируйте план под группу.";
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (error) {
-      status.textContent = error && error.message ? error.message : "Не удалось создать план. Обновите страницу и попробуйте ещё раз.";
+      result.innerHTML = '<div class="empty"><strong>Не удалось создать черновик.</strong><br>' +
+        escapeHtml(error && error.message ? error.message : "Неизвестная ошибка") +
+        '<br>Обновите страницу. Если проблема повторится, проверьте доступность файлов библиотеки и генератора.</div>';
+      status.textContent = "Генерация не завершилась. Ошибка показана в блоке результата.";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Составить черновик ↗";
     }
   });
 
@@ -322,7 +384,6 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
   });
 })();
 </script>
-<script src="js/generator.v1.js"></script>
 </body>
 </html>
 
