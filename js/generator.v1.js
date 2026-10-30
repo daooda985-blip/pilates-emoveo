@@ -155,7 +155,13 @@
     );
     return plan;
   }
-  const api = { generate, validatePlan, stageSplit, STAGE_ORDER, REST_BREAKS_SECONDS };
+  function canUseCard(card, raw = {}) {
+    const options = normalizeOptions(raw), stage = raw.stage || "main";
+    return compatible(card, stage) && hasEquipment(card, options.equipment) &&
+      !(options.level === "beginner" && (card.tags || []).includes("higher_control")) &&
+      !options.excludedIds.has(card.id);
+  }
+  const api = { generate, validatePlan, stageSplit, canUseCard, STAGE_ORDER, REST_BREAKS_SECONDS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root) root.PilatesGeneratorV1 = api;
 })(typeof globalThis !== "undefined" ? globalThis : this);
