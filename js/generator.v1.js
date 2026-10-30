@@ -34,10 +34,30 @@
   }
   function hasEquipment(card, equipment) {
     const e = (card.equipment || "").toLowerCase();
-    if (!e || e === "не требуется") return true;
-    if (e.includes("стена") && !equipment.includes("wall")) return false;
-    if (e.includes("стул") && !equipment.includes("chair")) return false;
-    if ((e.includes("коврик") || e.includes("полотенце")) && !equipment.includes("mat")) return false;
+    const has = id => equipment.includes(id);
+    if (!e || e.includes("не требуется")) return true;
+
+    // A mat is a genuine requirement when named; optional props remain optional.
+    if (e.includes("коврик") && !has("mat")) return false;
+
+    // "Wall/chair" and "wall or stable support" allow either available support.
+    if (e.includes("стена") && e.includes("стул")) {
+      if (!has("wall") && !has("chair") && !e.includes("по необходимости")) return false;
+    } else if (e.includes("стена") && e.includes("или устойчивая опора")) {
+      if (!has("wall") && !has("chair") && !e.includes("по необходимости")) return false;
+    } else if (e.includes("стена") && !has("wall") && !e.includes("по необходимости")) {
+      return false;
+    }
+
+    if (e.includes("стул") && !has("chair") &&
+        !e.includes("по необходимости") && !e.includes("необязательно") &&
+        !e.includes("стена/стул")) return false;
+    if (e.includes("ремень") && !has("band") &&
+        !e.includes("необязательно") && !e.includes("по необходимости")) return false;
+    if (e.includes("мяч") && !has("ball")) return false;
+    if (e.includes("кольцо") && !has("ring")) return false;
+    if (e.includes("блок") && !has("block")) return false;
+    if (e.includes("гантел") && !has("weights")) return false;
     return true;
   }
   function goalMatches(card, goals) {
