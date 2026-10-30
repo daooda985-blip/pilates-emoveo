@@ -58,16 +58,57 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
 .resulthead{align-items:flex-start;flex-direction:column}.footer{flex-wrap:wrap}
 .strip{flex-wrap:wrap;justify-content:flex-start}
 }
+
+/* Shared workspace shell */
+.app-header{position:sticky;top:0;z-index:20;background:rgba(244,242,236,.96);backdrop-filter:blur(12px);padding-top:16px;padding-bottom:16px}
+.app-header nav{gap:clamp(9px,1.5vw,20px);flex-wrap:wrap}
+.app-header nav a{padding:7px 0;border-bottom:1px solid transparent}
+.app-header nav a:hover,.app-header nav a:focus-visible{color:var(--olive);border-color:var(--olive)}
+.workspace{padding:42px 6vw 30px}
+.workspace-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.workspace h2{margin:8px 0 12px}
+.workspace-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:25px}
+.workspace-tile{display:block;background:var(--card);border:1px solid var(--line);padding:20px;min-height:145px;transition:transform .15s,border-color .15s}
+.workspace-tile:hover{transform:translateY(-2px);border-color:var(--olive)}
+.workspace-tile strong{display:block;font-size:15px;margin:12px 0 5px}
+.workspace-tile p{font-size:12px;color:var(--muted);margin:0}
+.tile-icon{font-size:20px;color:var(--olive)}
+.module-placeholder{padding:35px 6vw;border-top:1px solid var(--line);scroll-margin-top:100px}
+.module-placeholder .placeholder-inner{max-width:760px;background:#e9e8df;padding:25px}
+.module-placeholder h2{font-size:clamp(26px,3vw,38px);margin:8px 0}
+.module-placeholder p{font-size:13px;color:var(--muted);max-width:620px}
+.module-placeholder .module-state{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--olive);font-weight:bold}
+#dashboard,#planner,#library,#templates,#clients,#schedule,#history,#settings{scroll-margin-top:95px}
+@media(max-width:900px){.workspace-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.app-header{gap:10px}.app-header nav{gap:8px 14px}.workspace{padding:30px 5vw}.module-placeholder{padding:28px 5vw}}
+@media(max-width:420px){.workspace-grid{grid-template-columns:1fr}.workspace-tile{min-height:0}}
+
 </style>
 </head>
 <body>
-<header class="header">
-  <a class="brand" href="#">Pilates <span>by emoveo</span></a>
-  <nav aria-label="Основная навигация">
-    <a href="#features">Возможности</a><a href="#planner">Планировщик</a><a href="#about">О проекте</a>
+<header class="header app-header">
+  <a class="brand" href="#dashboard">Pilates <span>by emoveo</span></a>
+  <nav aria-label="Навигация по рабочему пространству">
+    <a href="#dashboard">Главная</a><a href="#planner">Планировщик</a><a href="#library">Упражнения</a><a href="#templates">Шаблоны</a><a href="#clients">Клиенты</a><a href="#schedule">Расписание</a><a href="#history">История</a><a href="#settings">Настройки</a>
   </nav>
 </header>
 <main>
+<section class="workspace" id="dashboard">
+  <div class="workspace-head">
+    <div><div class="eyebrow">РАБОЧЕЕ ПРОСТРАНСТВО · EMOVEO</div><h2>Планируйте занятия <em>осознанно.</em></h2><p class="lead">Основные инструменты инструктора Pilates — в одном месте. Выберите раздел, чтобы начать работу.</p></div>
+    <a class="btn" href="#planner">Создать занятие</a>
+  </div>
+  <div class="workspace-grid">
+    <a class="workspace-tile" href="#planner"><span class="tile-icon">01</span><strong>Планировщик занятий</strong><p>Создание и редактирование комплексов из трёх этапов.</p></a>
+    <a class="workspace-tile" href="#library"><span class="tile-icon">02</span><strong>Библиотека упражнений</strong><p>Каталог, техника, дозировка и варианты выполнения.</p></a>
+    <a class="workspace-tile" href="#templates"><span class="tile-icon">03</span><strong>Шаблоны</strong><p>Место для повторно используемых комплексов.</p></a>
+    <a class="workspace-tile" href="#settings"><span class="tile-icon">04</span><strong>Настройки</strong><p>Параметры работы и управления данными.</p></a>
+    <a class="workspace-tile" href="#clients"><span class="tile-icon">05</span><strong>Клиенты и группы</strong><p>Будущий раздел организации индивидуальной и групповой работы.</p></a>
+    <a class="workspace-tile" href="#schedule"><span class="tile-icon">06</span><strong>Расписание</strong><p>Будущий календарь занятий.</p></a>
+    <a class="workspace-tile" href="#history"><span class="tile-icon">07</span><strong>История и аналитика</strong><p>Будущий журнал и обзор проведённых занятий.</p></a>
+    <a class="workspace-tile" href="#about"><span class="tile-icon">08</span><strong>О проекте</strong><p>Принципы Pilates by emoveo.</p></a>
+  </div>
+</section>
 <section class="hero">
   <div>
     <p class="eyebrow">ПРОСТРАНСТВО ДЛЯ ДВИЖЕНИЯ</p>
@@ -132,6 +173,13 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
   <div><p class="muted">Хорошее занятие не обязано быть изнурительным. Важны ясная логика, внимание к участникам и возможность менять план под реальную группу.</p><p class="muted">Это первая версия сайта Pilates by emoveo. План формируется в браузере и пока не сохраняется автоматически.</p></div>
 </section>
 </main>
+<section class="module-placeholder" id="library"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БАЗОВАЯ ВЕРСИЯ</div><h2>Библиотека упражнений</h2><p>Каталог уже используется планировщиком. Отдельный интерфейс поиска, фильтров и подробного просмотра карточек будет добавлен следующим шагом.</p><a class="btn" href="#planner">Перейти к планировщику</a></div></section>
+<section class="module-placeholder" id="templates"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · ЗАПЛАНИРОВАН</div><h2>Шаблоны занятий</h2><p>Здесь появится управление сохранёнными шаблонами и повторное использование готовых комплексов.</p></div></section>
+<section class="module-placeholder" id="clients"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БУДУЩЕЕ РАСШИРЕНИЕ</div><h2>Клиенты и группы</h2><p>Раздел для организации индивидуальных занятий, постоянных групп и информации о подготовке участников.</p></div></section>
+<section class="module-placeholder" id="schedule"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БУДУЩЕЕ РАСШИРЕНИЕ</div><h2>Расписание</h2><p>Здесь будет календарь занятий. Пока планирование по датам не реализовано.</p></div></section>
+<section class="module-placeholder" id="history"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БУДУЩЕЕ РАСШИРЕНИЕ</div><h2>История и аналитика</h2><p>Будущий журнал сохранённых занятий и обзор активности. Аналитика пока не подключена.</p></div></section>
+<section class="module-placeholder" id="settings"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БАЗОВАЯ СТРУКТУРА</div><h2>Настройки</h2><p>Общие параметры и управление локальными данными будут добавлены отдельным шагом. Сейчас сайт не обещает синхронизацию между устройствами.</p></div></section>
+
 <footer class="footer"><strong>Pilates by emoveo</strong><span>Осознанное движение. Продуманный процесс.</span><span>© <span id="year"></span> emoveo</span></footer>
 <script src="js/generator.v1.js"></script>
 <script>
