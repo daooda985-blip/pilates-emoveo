@@ -54,7 +54,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "дыхание"
+      ]
     },
     {
       "id": "WARM_002",
@@ -86,7 +89,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "таз и ягодичные мышцы"
+      ]
     },
     {
       "id": "WARM_003",
@@ -118,7 +124,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "плечевой пояс и верх спины"
+      ]
     },
     {
       "id": "WARM_004",
@@ -149,7 +158,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "плечевой пояс и верх спины"
+      ]
     },
     {
       "id": "WARM_005",
@@ -182,7 +194,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус",
+        "баланс и координация"
+      ]
     },
     {
       "id": "MOB_001",
@@ -214,7 +230,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "дыхание"
+      ]
     },
     {
       "id": "MOB_002",
@@ -246,7 +265,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "позвоночник и подвижность"
+      ]
     },
     {
       "id": "MOB_003",
@@ -278,7 +300,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "общая подвижность"
+      ]
     },
     {
       "id": "MOB_004",
@@ -310,7 +335,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус",
+        "позвоночник и подвижность"
+      ]
     },
     {
       "id": "MOB_005",
@@ -342,7 +371,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "позвоночник и подвижность"
+      ]
     },
     {
       "id": "POST_001",
@@ -374,7 +406,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "плечевой пояс и верх спины"
+      ]
     },
     {
       "id": "POST_002",
@@ -406,7 +441,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "плечевой пояс и верх спины"
+      ]
     },
     {
       "id": "POST_003",
@@ -438,7 +476,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "плечевой пояс и верх спины"
+      ]
     },
     {
       "id": "POST_004",
@@ -470,7 +511,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "плечевой пояс и верх спины"
+      ]
     },
     {
       "id": "POST_005",
@@ -503,7 +547,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "плечевой пояс и верх спины"
+      ]
     },
     {
       "id": "POST_006",
@@ -535,7 +582,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "плечевой пояс и верх спины"
+      ]
     },
     {
       "id": "POST_007",
@@ -567,7 +617,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "позвоночник и подвижность"
+      ]
     },
     {
       "id": "CORE_001",
@@ -598,7 +651,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус"
+      ]
     },
     {
       "id": "CORE_002",
@@ -630,7 +686,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус",
+        "баланс и координация"
+      ]
     },
     {
       "id": "CORE_003",
@@ -661,7 +721,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус"
+      ]
     },
     {
       "id": "CORE_004",
@@ -694,7 +757,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус",
+        "баланс и координация"
+      ]
     },
     {
       "id": "CORE_005",
@@ -726,7 +793,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус",
+        "баланс и координация"
+      ]
     },
     {
       "id": "CORE_006",
@@ -759,7 +830,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус"
+      ]
     },
     {
       "id": "CORE_007",
@@ -792,7 +866,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "корпус"
+      ]
     },
     {
       "id": "LEGS_001",
@@ -824,7 +901,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "таз и ягодичные мышцы"
+      ]
     },
     {
       "id": "LEGS_002",
@@ -856,7 +936,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "таз и ягодичные мышцы"
+      ]
     },
     {
       "id": "LEGS_003",
@@ -888,7 +971,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "таз и ягодичные мышцы"
+      ]
     },
     {
       "id": "LEGS_004",
@@ -920,7 +1006,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "таз и ягодичные мышцы",
+        "баланс и координация"
+      ]
     },
     {
       "id": "LEGS_005",
@@ -952,7 +1042,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "ноги и голеностоп"
+      ]
     },
     {
       "id": "LEGS_006",
@@ -984,7 +1077,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "ноги и голеностоп",
+        "баланс и координация"
+      ]
     },
     {
       "id": "BAL_001",
@@ -1016,7 +1113,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "баланс и координация"
+      ]
     },
     {
       "id": "BAL_002",
@@ -1049,7 +1149,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "баланс и координация"
+      ]
     },
     {
       "id": "BAL_003",
@@ -1080,7 +1183,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "ноги и голеностоп",
+        "баланс и координация"
+      ]
     },
     {
       "id": "STR_001",
@@ -1113,7 +1220,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "позвоночник и подвижность",
+        "растяжка и восстановление"
+      ]
     },
     {
       "id": "STR_002",
@@ -1145,7 +1256,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "растяжка и восстановление"
+      ]
     },
     {
       "id": "STR_003",
@@ -1177,7 +1291,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "растяжка и восстановление"
+      ]
     },
     {
       "id": "STR_004",
@@ -1208,7 +1325,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "таз и ягодичные мышцы",
+        "растяжка и восстановление"
+      ]
     },
     {
       "id": "STR_005",
@@ -1240,7 +1361,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "растяжка и восстановление"
+      ]
     },
     {
       "id": "STR_006",
@@ -1272,7 +1396,11 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "таз и ягодичные мышцы",
+        "растяжка и восстановление"
+      ]
     },
     {
       "id": "STR_007",
@@ -1304,7 +1432,10 @@
       "demonstration_url": null,
       "demonstration_status": "needs_exact_video_verification",
       "review_status": "working_card_reviewed",
-      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка."
+      "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
+      "body_focus": [
+        "растяжка и восстановление"
+      ]
     }
   ]
 }
