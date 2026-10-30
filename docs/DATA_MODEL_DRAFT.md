@@ -1,0 +1,186 @@
+# Pilates by emoveo — черновик схемы облачных данных
+
+Версия: 0.1  
+Статус: проектный документ; не SQL-миграция и не созданная база.  
+Основание: пользователь утвердил облачную модель, вход только инструкторов/сотрудников и минимальную клиентскую карточку.
+
+## 1. Общие правила модели
+
+- База: реляционная PostgreSQL-подобная схема.
+- Каждая рабочая запись организации принадлежит studio_id.
+- Первичный ключ — UUID; серверные даты — timestamptz в UTC.
+- Для связанных сущностей использовать составные ограничения уникальности и внешние ключи с studio_id, чтобы нельзя было случайно связать записи разных студий.
+- Системный каталог упражнений отделён от пользовательских данных студии.
+- Не хранить пароли в собственных таблицах: идентичность и парольная аутентификация принадлежат Auth-провайдеру.
+- Не создавать отдельные аккаунты клиентов в первом релизе.
+
+## 2. Сущности и рекомендуемые поля
+
+### Профиль и организации
+
+**profiles**
+- user_id UUID PK — идентификатор Auth-пользователя.
+- display_name TEXT — имя для отображения.
+- created_at, updated_at TIMESTAMPTZ.
+
+**studios**
+- id UUID PK.
+- name TEXT NOT NULL.
+- timezone TEXT NOT NULL — IANA timezone, например Europe/Amsterdam.
+- created_by UUID NOT NULL — пользователь, создавший студию.
+- created_at, updated_at TIMESTAMPTZ.
+
+**studio_memberships**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- user_id UUID NOT NULL.
+- role TEXT NOT NULL CHECK role IN ('owner','admin','instructor','staff').
+- status TEXT NOT NULL CHECK status IN ('invited','active','suspended').
+- created_at, updated_at TIMESTAMPTZ.
+- UNIQUE(studio_id,user_id).
+- Приглашение должно быть привязано к конкретному адресу/пользователю и иметь срок действия; нельзя открыто регистрировать членство в чужой студии.
+
+### Клиенты и группы
+
+**clients**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- display_name TEXT NOT NULL.
+- contact TEXT NULL — необязательное средство связи.
+- status TEXT NOT NULL CHECK status IN ('active','archived').
+- created_by UUID NOT NULL.
+- created_at, updated_at TIMESTAMPTZ.
+- UNIQUE(studio_id,id) для безопасных составных ссылок.
+
+**client_notes**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- client_id UUID NOT NULL.
+- author_user_id UUID NOT NULL.
+- body TEXT NOT NULL.
+- created_at, updated_at TIMESTAMPTZ.
+- Подсказка интерфейса: «Нейтральная организационная заметка. Не указывайте диагнозы и медицинские сведения».
+- Контент заметок не включать в технические логи.
+
+**groups**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- name TEXT NOT NULL.
+- description TEXT NULL — необязательное организационное описание.
+- status TEXT NOT NULL CHECK status IN ('active','archived').
+- created_at, updated_at TIMESTAMPTZ.
+
+**group_members**
+- studio_id UUID NOT NULL.
+- group_id UUID NOT NULL.
+- client_id UUID NOT NULL.
+- joined_at TIMESTAMPTZ NOT NULL.
+- left_at TIMESTAMPTZ NULL.
+- Составной первичный ключ или уникальность активного членства; точная стратегия зависит от поддержки истории переходов между группами.
+- Составные внешние ключи гарантируют, что группа и клиент принадлежат одной студии.
+
+### Планирование и занятия
+
+**plans**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- author_user_id UUID NOT NULL.
+- title TEXT NOT NULL.
+- duration_minutes INTEGER NOT NULL.
+- level TEXT NULL.
+- focus JSONB NULL — только структурированные параметры генератора, не медицинские данные.
+- status TEXT NOT NULL CHECK status IN ('draft','saved','archived').
+- created_at, updated_at TIMESTAMPTZ.
+
+**plan_items**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- plan_id UUID NOT NULL.
+- exercise_id UUID NULL — ссылка на системную карточку или версию упражнения.
+- stage TEXT NOT NULL CHECK stage IN ('warmup','main','stretch').
+- position INTEGER NOT NULL.
+- duration_seconds INTEGER NOT NULL CHECK duration_seconds > 0.
+- snapshot JSONB NOT NULL — снимок названия/дозировки/параметров, чтобы обновление библиотеки не меняло старые планы.
+- UNIQUE(plan_id,stage,position).
+- Связь с планом должна подтверждать одинаковый studio_id.
+
+**templates**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- author_user_id UUID NOT NULL.
+- title TEXT NOT NULL.
+- payload JSONB NOT NULL — версия шаблона и элементы.
+- created_at, updated_at TIMESTAMPTZ.
+
+### Расписание и посещаемость
+
+**schedule_events**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- instructor_user_id UUID NOT NULL.
+- group_id UUID NULL.
+- plan_id UUID NULL.
+- starts_at, ends_at TIMESTAMPTZ NOT NULL.
+- timezone TEXT NOT NULL — часовой пояс показа/организации.
+- status TEXT NOT NULL CHECK status IN ('scheduled','cancelled','completed').
+- created_at, updated_at TIMESTAMPTZ.
+- Проверка ends_at > starts_at.
+- Правила повторяющихся событий и исключений — отдельный слой, не хранить расписание одной непрозрачной строкой.
+
+**attendance**
+- id UUID PK.
+- studio_id UUID NOT NULL.
+- event_id UUID NOT NULL.
+- client_id UUID NOT NULL.
+- status TEXT NOT NULL CHECK status IN ('present','absent','cancelled','no_show').
+- marked_by UUID NOT NULL.
+- marked_at TIMESTAMPTZ NOT NULL.
+- UNIQUE(event_id,client_id).
+- Составные внешние ключи запрещают соединять событие и клиента из разных студий.
+
+## 3. Матрица ролей — стартовая рекомендация
+
+| Действие | owner | admin | instructor | staff |
+|---|---:|---:|---:|---:|
+| Управление студией и передача владения | Да | Нет | Нет | Нет |
+| Управление сотрудниками и ролями | Да | Да, кроме owner | Нет | Нет |
+| Просмотр клиентов | Да | Да | Назначенные/в пределах студии | Только при отдельном разрешении |
+| Создание/изменение клиентских карточек | Да | Да | Да, в пределах студии | Только при отдельном разрешении |
+| Управление группами | Да | Да | Да | Только при отдельном разрешении |
+| Создание и редактирование своих планов | Да | Да | Да | Нет |
+| Управление расписанием | Да | Да | Да, в пределах назначений | Операционные действия по разрешению |
+| Просмотр сводной аналитики | Да | Да | Ограниченно | Нет |
+
+Это предлагаемая матрица; перед внедрением каждое действие нужно привязать к проверяемому permission и тесту. Нельзя считать роль staff автоматически имеющей доступ ко всем клиентским данным.
+
+## 4. RLS и изоляция студий
+
+Для каждой таблицы с studio_id:
+1. Включить RLS.
+2. Разрешать SELECT только если у текущего Auth-пользователя есть активное членство в этой студии.
+3. Разрешать INSERT только при активном членстве и допустимом permission.
+4. Разрешать UPDATE/DELETE только при проверке как старого, так и нового studio_id; запрещать перенос записи между студиями обычным обновлением.
+5. Защитить таблицу членства от самостоятельного повышения роли и добавления в чужую студию.
+6. Не открывать доступ анонимной роли.
+7. Проверять составные связи между всеми сущностями студии.
+
+Набор негативных тестов обязателен: пользователь студии A не может читать, создавать, изменять или удалять данные студии B; не может подменить studio_id; не может повысить роль; не может связать клиента с чужим событием или группой.
+
+## 5. Жизненный цикл данных
+
+- Архивация клиента предпочтительнее немедленного удаления в повседневном интерфейсе.
+- Должен быть отдельный подтверждаемый процесс полного удаления/экспорта, с учётом связанных посещений и заметок.
+- Не копировать контакт и содержимое заметок в audit-логи.
+- Установить срок хранения и процедуру удаления до начала работы с реальными данными.
+- Резервная копия должна быть зашифрована и регулярно проверяться восстановлением.
+- Сотрудник, покинувший студию, теряет активное членство; история действий должна сохранять корректную атрибуцию без сохранения лишних персональных данных.
+
+## 6. Что нужно уточнить перед SQL-миграцией
+
+1. Точные разрешения staff и границы доступа инструктора к клиентам: все клиенты студии или только назначенные группы.
+2. Может ли клиент одновременно состоять в нескольких группах.
+3. Какие статусы посещаемости действительно нужны в первой версии.
+4. Политика хранения/удаления заметок и клиентских записей.
+5. Выбранный провайдер, регион и реальные возможности резервного копирования.
+
+До ответов допустима концептуальная модель и тестовые данные. Не использовать эту спецификацию как готовую миграцию в production.
