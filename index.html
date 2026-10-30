@@ -403,8 +403,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
     currentPlan.validation=window.PilatesGeneratorV1.validatePlan(currentPlan,{excludedIds:new Set(),level:currentOptions.engineLevel});
   }
   function candidates(stageName,currentId){
+    const stage=currentPlan.stages.find(s=>s.stage===stageName);
     const used=allIds(); used.delete(currentId);
-    return currentLibrary.cards.filter(c=>window.PilatesGeneratorV1.canUseCard(c,{stage:stageName,level:currentOptions.engineLevel,equipment:currentOptions.equipmentIds})&&!used.has(c.id));
+    const currentCard=currentId?currentLibrary.cards.find(c=>c.id===currentId):null;
+    const currentMinutes=currentCard?Number(currentCard.estimated_active_minutes||1.5):0;
+    const otherMinutes=stage?stage.exercises.reduce((n,c)=>n+Number(c.estimated_active_minutes||1.5),0)-currentMinutes:0;
+    const limit=stage?Number(stage.targetMinutes):Infinity;
+    return currentLibrary.cards.filter(c=>{
+      const minutes=Number(c.estimated_active_minutes||1.5);
+      return window.PilatesGeneratorV1.canUseCard(c,{stage:stageName,level:currentOptions.engineLevel,equipment:currentOptions.equipmentIds})&&
+        !used.has(c.id)&&otherMinutes+minutes<=limit+0.01;
+    });
   }
   function selector(stageName,currentId,action,label){
     const items=candidates(stageName,currentId);
