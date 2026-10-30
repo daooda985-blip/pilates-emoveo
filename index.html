@@ -42,6 +42,7 @@ h2{font-size:clamp(32px,4vw,48px)}
 .stage{padding:20px;background:var(--card);border:1px solid #ddd}.stage h4{margin:0}
 .time{float:right;color:var(--olive);font-size:12px;font-weight:bold}
 .stage p{font-size:12px;color:#66695f;line-height:1.8}
+.exercise-tools{display:flex;flex-wrap:wrap;gap:4px;border-top:1px solid var(--line);margin-top:14px;padding-top:8px}.exercise-tools .plain{font-size:11px;padding:7px}.exercise-tools button:disabled{opacity:.35;cursor:not-allowed}.edit-select{display:flex;flex-direction:column;gap:5px;margin:12px 0;font-size:11px;color:var(--muted)}.edit-select select{width:100%;padding:10px;border:1px solid var(--line);background:#fff;font:inherit;color:var(--ink)}.plan-stage{margin:22px 0;padding:18px;background:#e9e8df}.plan-stage .stage{margin:10px 0}
 .coach{margin-top:15px;font-size:12px;line-height:1.8}
 .safety{font-size:11px;color:#74766d;line-height:1.8;margin-top:18px}
 .approach{display:grid;grid-template-columns:1fr 1fr;background:#e2e5da}
@@ -250,22 +251,41 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
     else lines.push("Видео: ссылка на точную демонстрацию пока не проверена.");
     return lines.join("\n");
   }
-  function renderCard(card) {
-    const video = card.demonstration_url
-      ? '<p><a href="' + escapeHtml(card.demonstration_url) + '" target="_blank" rel="noopener noreferrer">Открыть демонстрацию</a></p>'
-      : '<p class="muted">Видео: точная демонстрация пока не проверена.</p>';
-    return '<article class="stage exercise-card">' +
-      '<span class="time">' + escapeHtml(card.estimated_active_minutes || "—") + ' мин</span>' +
-      '<h4>' + escapeHtml(card.name_ru) + '</h4>' +
-      '<p class="muted">' + escapeHtml(card.id) + ' · ' + escapeHtml(card.equipment || "Без оборудования") + '</p>' +
-      '<p><strong>Исходное положение:</strong> ' + escapeHtml(card.starting_position || "не указано") + '</p>' +
-      '<strong>Техника</strong>' + listHtml(card.technique_steps) +
-      '<p><strong>Дозировка:</strong> ' + escapeHtml(card.dosage || "определить по группе") + '</p>' +
-      '<p><strong>Дыхание:</strong> ' + escapeHtml(card.breathing || "не задерживать дыхание") + '</p>' +
-      '<p><strong>Упрощение:</strong> ' + escapeHtml(card.easier_option || "не указано") + '</p>' +
-      '<p><strong>Вариант усложнения:</strong> ' + escapeHtml(card.progression_option || "не указано") + '</p>' +
-      '<p><strong>Меры предосторожности:</strong> ' + escapeHtml(card.safety_notes || "Проверьте пригодность упражнения для группы.") + '</p>' +
-      video + '</article>';
+  let currentPlan = null, currentLibrary = null, currentOptions = null;
+  function allIds(){return new Set(currentPlan.stages.flatMap(s=>s.exercises.map(c=>c.id)));}
+  function recalc(){
+    currentPlan.stages.forEach(s=>{
+      s.estimatedSelectedMinutes=Math.round(s.exercises.reduce((n,c)=>n+Number(c.estimated_active_minutes||1.5),0)*10)/10;
+      s.remainingMinutes=Math.round(Math.max(0,s.targetMinutes-s.estimatedSelectedMinutes)*10)/10;
+      s.complete=s.remainingMinutes<=0.01;
+      s.note=s.complete?null:"Не хватает "+s.remainingMinutes+" мин по текущим оценкам. Не увеличивайте дозировку искусственно.";
+    });
+    currentPlan.estimatedActiveMinutes=Math.round(currentPlan.stages.reduce((n,s)=>n+s.estimatedSelectedMinutes,0)*10)/10;
+    currentPlan.estimatedTotalMinutesIncludingBreaks=Math.round((currentPlan.estimatedActiveMinutes+currentPlan.restBreaksTotalSeconds/60)*10)/10;
+    currentPlan.validation=window.PilatesGeneratorV1.validatePlan(currentPlan,{excludedIds:new Set(),level:currentOptions.engineLevel});
+  }
+  function candidates(stageName,currentId){
+    const used=allIds(); used.delete(currentId);
+    return currentLibrary.cards.filter(c=>window.PilatesGeneratorV1.canUseCard(c,{stage:stageName,level:currentOptions.engineLevel,equipment:currentOptions.equipmentIds})&&!used.has(c.id));
+  }
+  function selector(stageName,currentId,action,label){
+    const items=candidates(stageName,currentId);
+    return '<label class="edit-select"><span>'+escapeHtml(label)+'</span><select data-action="'+action+'" data-stage="'+stageName+'" data-current="'+escapeHtml(currentId||'')+'"><option value="">'+(items.length?'Выберите упражнение…':'Нет доступных упражнений')+'</option>'+items.map(c=>'<option value="'+escapeHtml(c.id)+'">'+escapeHtml(c.name_ru)+' · '+escapeHtml(c.estimated_active_minutes||'—')+' мин</option>').join('')+'</select></label>';
+  }
+  function renderCard(card,stageName,index){
+    const video=card.demonstration_url?'<p><a href="'+escapeHtml(card.demonstration_url)+'" target="_blank" rel="noopener noreferrer">Открыть демонстрацию</a></p>':'<p class="muted">Видео: точная демонстрация пока не проверена.</p>';
+    return '<article class="stage exercise-card"><span class="time">'+escapeHtml(card.estimated_active_minutes||'—')+' мин</span><h4>'+escapeHtml(card.name_ru)+'</h4><p class="muted">'+escapeHtml(card.id)+' · '+escapeHtml(card.equipment||'Без оборудования')+'</p><p><strong>Исходное положение:</strong> '+escapeHtml(card.starting_position||'не указано')+'</p><strong>Техника</strong>'+listHtml(card.technique_steps)+'<p><strong>Дозировка:</strong> '+escapeHtml(card.dosage||'определить по группе')+'</p><p><strong>Дыхание:</strong> '+escapeHtml(card.breathing||'не задерживать дыхание')+'</p><p><strong>Упрощение:</strong> '+escapeHtml(card.easier_option||'не указано')+'</p><p><strong>Вариант усложнения:</strong> '+escapeHtml(card.progression_option||'не указано')+'</p><p><strong>Меры предосторожности:</strong> '+escapeHtml(card.safety_notes||'Проверьте пригодность упражнения для группы.')+'</p>'+video+'<div class="exercise-tools"><button type="button" class="plain" data-action="up" data-stage="'+stageName+'" data-index="'+index+'" '+(index===0?'disabled':'')+'>↑ Выше</button><button type="button" class="plain" data-action="down" data-stage="'+stageName+'" data-index="'+index+'">↓ Ниже</button><button type="button" class="plain" data-action="remove" data-stage="'+stageName+'" data-index="'+index+'">Убрать</button></div>'+selector(stageName,card.id,'replace','Заменить упражнение')+'</article>';
+  }
+  function renderPlan(){
+    if(!currentPlan)return;
+    const stages=currentPlan.stages.map(s=>{
+      const cards=s.exercises.length?s.exercises.map((c,i)=>renderCard(c,s.stage,i)).join(''):'<div class="empty">В этом этапе пока нет упражнений. Добавьте подходящее из библиотеки.</div>';
+      const shortage=s.remainingMinutes>0.01?'<div class="coach"><strong>Не заполнено по времени:</strong> '+escapeHtml(s.remainingMinutes)+' мин. Не растягивайте упражнения искусственно.</div>':'';
+      return '<section class="plan-stage"><div class="resulthead"><div><p class="eyebrow">'+escapeHtml(stageLabels[s.stage])+'</p><h3>Цель: '+escapeHtml(s.targetMinutes)+' мин · выбрано: '+escapeHtml(s.estimatedSelectedMinutes)+' мин</h3></div></div>'+cards+selector(s.stage,'','add','Добавить упражнение')+shortage+'</section>';
+    }).join('');
+    const warnings=(currentPlan.validation.warnings||[]).map(w=>'<li>'+escapeHtml(w)+'</li>').join('');
+    result.innerHTML='<div class="resulthead"><div><p class="eyebrow">ЧЕРНОВИК ЗАНЯТИЯ · РЕДАКТИРОВАНИЕ</p><h3>'+escapeHtml(currentPlan.targetMinutes)+' минут · '+escapeHtml(focusLabels[currentOptions.focus])+'</h3></div><button class="btn" id="copy-plan" type="button">Копировать план</button></div><p class="muted">Уровень: '+escapeHtml(levelLabels[currentOptions.level])+' · Оборудование: '+escapeHtml(equipmentLabels[currentOptions.equipment])+'</p><div class="coach"><strong>Активное время:</strong> '+escapeHtml(currentPlan.estimatedActiveMinutes)+' мин из '+escapeHtml(currentPlan.targetMinutes)+' мин. Паузы учитываются отдельно; переходы не включены.</div>'+stages+'<div class="coach"><strong>Перед занятием</strong><br>'+escapeHtml(equipmentNote(currentOptions.equipment))+'<br>Проверьте ограничения и самочувствие участников.</div>'+(warnings?'<div class="coach"><strong>Примечания генератора</strong><ul>'+warnings+'</ul></div>':'');
+    status.textContent="План можно редактировать: менять порядок, заменять, добавлять и убирать упражнения.";
   }
   function buildPlanText(plan, focus, level, equipment) {
     const out = [
@@ -292,92 +312,44 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
     return out.join("\n");
   }
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    submitButton.disabled = true;
-    submitButton.textContent = "Формируем…";
-    status.textContent = "Загружаю библиотеку и подбираю упражнения…";
-    try {
-      const duration = Number($("duration").value);
-      const level = $("level").value;
-      const focus = $("focus").value;
-      const equipment = $("equipment").value;
-      if (!Number.isFinite(duration) || duration < 15) throw new Error("Выберите корректную продолжительность занятия.");
-      if (!focusGoals[focus] || !engineLevels[level] || !equipmentLabels[equipment]) throw new Error("Проверьте выбранные параметры.");
-      const data = await loadLibrary();
-      const plan = window.PilatesGeneratorV1.generate(data, {
-        totalMinutes: duration,
-        level: engineLevels[level],
-        goals: focusGoals[focus],
-        equipment: equipmentOptions(equipment)
-      });
-      const validation = plan.validation || { errors: [], warnings: [] };
-      const stagesHtml = plan.stages.map((stage) => {
-        const shortage = stage.remainingMinutes > 0.01
-          ? '<div class="coach"><strong>Не заполнено по времени:</strong> ' + escapeHtml(stage.remainingMinutes) +
-            ' мин. Не растягивайте упражнения искусственно — добавьте проверенные карточки или скорректируйте план.</div>'
-          : "";
-        const exercises = stage.exercises.length
-          ? stage.exercises.map(renderCard).join("")
-          : '<div class="empty">В библиотеке не найдено подходящих упражнений для этого этапа и выбранного оборудования.</div>';
-        return '<section class="plan-stage"><div class="resulthead"><div><p class="eyebrow">' +
-          escapeHtml(stageLabels[stage.stage]) + '</p><h3>Цель: ' + escapeHtml(stage.targetMinutes) +
-          ' мин · выбрано: ' + escapeHtml(stage.estimatedSelectedMinutes) + ' мин</h3></div></div>' +
-          exercises + shortage + '</section>';
-      }).join("");
-      const warnings = (validation.warnings || []).map((item) => "<li>" + escapeHtml(item) + "</li>").join("");
-      result.innerHTML =
-        '<div class="resulthead"><div><p class="eyebrow">ЧЕРНОВИК ЗАНЯТИЯ</p><h3>' +
-        escapeHtml(duration) + ' минут · ' + escapeHtml(focusLabels[focus]) +
-        '</h3></div><button class="btn" id="copy-plan" type="button">Копировать план</button></div>' +
-        '<p class="muted">Уровень: ' + escapeHtml(levelLabels[level]) + ' · Оборудование: ' +
-        escapeHtml(equipmentLabels[equipment]) + '</p>' +
-        '<div class="coach"><strong>Активное время по карточкам:</strong> ' +
-        escapeHtml(plan.estimatedActiveMinutes) + ' мин из целевых ' + escapeHtml(plan.targetMinutes) +
-        ' мин. Две паузы по 15 секунд учитываются отдельно; переходы не входят в расчёт.</div>' +
-        stagesHtml +
-        '<div class="coach"><strong>Перед занятием</strong><br>' + escapeHtml(equipmentNote(equipment)) +
-        '<br>Проверьте ограничения и самочувствие участников. При боли, головокружении или необычных симптомах упражнение следует прекратить.</div>' +
-        (warnings ? '<div class="coach"><strong>Примечания генератора</strong><ul>' + warnings + '</ul></div>' : "");
-      $("copy-plan").addEventListener("click", async () => {
-        const button = $("copy-plan");
-        try {
-          const text = buildPlanText(plan, focus, level, equipment);
-          if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(text);
-          } else {
-            const area = document.createElement("textarea");
-            area.value = text;
-            area.style.position = "fixed";
-            area.style.opacity = "0";
-            document.body.appendChild(area);
-            area.select();
-            const copied = document.execCommand("copy");
-            area.remove();
-            if (!copied) throw new Error("Копирование недоступно.");
-          }
-          button.textContent = "Скопировано ✓";
-        } catch (error) {
-          status.textContent = "План создан, но скопировать его автоматически не удалось. Можно выделить текст вручную.";
-        }
-      });
-      status.textContent = validation.errors && validation.errors.length
-        ? "Черновик создан, но проверка нашла замечания. Проверьте план перед занятием."
-        : "Черновик создан. Проверьте длительность этапов и адаптируйте план под группу.";
-      result.scrollIntoView({ behavior: "smooth", block: "start" });
-    } catch (error) {
-      result.innerHTML = '<div class="empty"><strong>Не удалось создать черновик.</strong><br>' +
-        escapeHtml(error && error.message ? error.message : "Неизвестная ошибка") +
-        '<br>Обновите страницу. Если проблема повторится, проверьте доступность файлов библиотеки и генератора.</div>';
-      status.textContent = "Генерация не завершилась. Ошибка показана в блоке результата.";
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = "Составить черновик ↗";
-    }
+  form.addEventListener("submit", async event=>{
+    event.preventDefault();submitButton.disabled=true;submitButton.textContent="Формируем…";status.textContent="Загружаю библиотеку и подбираю упражнения…";
+    try{
+      const duration=Number($("duration").value),level=$("level").value,focus=$("focus").value,equipment=$("equipment").value;
+      if(!Number.isFinite(duration)||duration<15||!focusGoals[focus]||!engineLevels[level]||!equipmentLabels[equipment])throw new Error("Проверьте выбранные параметры.");
+      currentLibrary=await loadLibrary();currentOptions={level,focus,equipment,engineLevel:engineLevels[level],equipmentIds:equipmentOptions(equipment)};
+      currentPlan=window.PilatesGeneratorV1.generate(currentLibrary,{totalMinutes:duration,level:currentOptions.engineLevel,goals:focusGoals[focus],equipment:currentOptions.equipmentIds});
+      renderPlan();result.scrollIntoView({behavior:"smooth",block:"start"});
+    }catch(error){result.innerHTML='<div class="empty"><strong>Не удалось создать черновик.</strong><br>'+escapeHtml(error.message||"Неизвестная ошибка")+'</div>';status.textContent="Генерация не завершилась.";}
+    finally{submitButton.disabled=false;submitButton.textContent="Составить черновик ↗";}
   });
-
+  result.addEventListener("change",event=>{
+    const control=event.target.closest("select[data-action]");if(!control||!currentPlan||!control.value)return;
+    const stage=currentPlan.stages.find(s=>s.stage===control.dataset.stage),card=currentLibrary.cards.find(c=>c.id===control.value);
+    if(!stage||!card)return;
+    if(control.dataset.action==="replace"){const i=stage.exercises.findIndex(c=>c.id===control.dataset.current);if(i>=0)stage.exercises[i]=card;}
+    if(control.dataset.action==="add")stage.exercises.push(card);
+    recalc();renderPlan();
+  });
+  result.addEventListener("click",async event=>{
+    const button=event.target.closest("button[data-action],#copy-plan");if(!button||!currentPlan)return;
+    if(button.id==="copy-plan"){
+      try{const text=buildPlanText(currentPlan,currentOptions.focus,currentOptions.level,currentOptions.equipment);
+        if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(text);
+        else{const area=document.createElement("textarea");area.value=text;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();const ok=document.execCommand("copy");area.remove();if(!ok)throw new Error("copy failed");}
+        button.textContent="Скопировано ✓";
+      }catch(error){status.textContent="Не удалось скопировать автоматически. Можно выделить текст вручную.";}return;
+    }
+    const stage=currentPlan.stages.find(s=>s.stage===button.dataset.stage);if(!stage)return;
+    const i=Number(button.dataset.index);
+    if(button.dataset.action==="remove")stage.exercises.splice(i,1);
+    if(button.dataset.action==="up"&&i>0)[stage.exercises[i-1],stage.exercises[i]]=[stage.exercises[i],stage.exercises[i-1]];
+    if(button.dataset.action==="down"&&i>=0&&i<stage.exercises.length-1)[stage.exercises[i+1],stage.exercises[i]]=[stage.exercises[i],stage.exercises[i+1]];
+    recalc();renderPlan();
+  });
   form.addEventListener("reset", () => {
     window.setTimeout(() => {
+      currentPlan = null; currentLibrary = null; currentOptions = null;
       result.innerHTML = '<div class="empty">Ваш план появится здесь. Выберите параметры и нажмите «Составить черновик».</div>';
       status.textContent = "Параметры сброшены.";
     }, 0);
