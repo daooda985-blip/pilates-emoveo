@@ -395,6 +395,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
       s.estimatedSelectedMinutes=Math.round(s.exercises.reduce((n,c)=>n+Number(c.estimated_active_minutes||1.5),0)*10)/10;
       s.remainingMinutes=Math.round(Math.max(0,s.targetMinutes-s.estimatedSelectedMinutes)*10)/10;
       s.complete=s.remainingMinutes<=0.01;
+      s.focusCoverage=[...new Set(s.exercises.flatMap(card=>card.body_focus||[]))];
       s.note=s.complete?null:"Не хватает "+s.remainingMinutes+" мин по текущим оценкам. Не увеличивайте дозировку искусственно.";
     });
     currentPlan.estimatedActiveMinutes=Math.round(currentPlan.stages.reduce((n,s)=>n+s.estimatedSelectedMinutes,0)*10)/10;
