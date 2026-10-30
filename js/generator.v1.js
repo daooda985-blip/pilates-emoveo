@@ -75,38 +75,49 @@
   function compatible(c, stage) {
     return c.stage === stage || (c.stage === "warm_up_or_main" && ["warm_up", "main"].includes(stage));
   }
-  function chooseStage(library, stage, targetMinutes, options, used) {
+  function chooseStage(library, stage, targetMinutes, options, used, coveredFocus) {
     const target = units(targetMinutes);
     const candidates = shuffleCopy(library.cards.filter(c =>
       compatible(c, stage) && !used.has(c.id) && !options.excludedIds.has(c.id) &&
       hasEquipment(c, options.equipment) &&
       !(options.level === "beginner" && (c.tags || []).includes("higher_control"))
     ), options.random);
+    const groups = [...new Set(candidates.flatMap(c => c.body_focus || ["общая подвижность"]))];
+    const groupIndex = new Map(groups.map((g, i) => [g, i]));
     const items = candidates.map(card => ({
-      card,
-      units: Math.max(1, units(Number(card.estimated_active_minutes || 1.5))),
-      score: (goalMatches(card, options.goals) ? 3 : 0) + (options.previousIds.has(card.id) ? 0 : 1)
+      card, units: Math.max(1, units(Number(card.estimated_active_minutes || 1.5))),
+      groups: (card.body_focus || ["общая подвижность"]).map(g => groupIndex.get(g)).filter(i => i !== undefined),
+      baseScore: (goalMatches(card, options.goals) ? 6 : 0) + (options.previousIds.has(card.id) ? 0 : 1)
     })).filter(x => x.units <= target);
-    // 0/1 subset-sum: each exercise can be selected at most once; never exceed stage target.
-    const dp = Array(target + 1).fill(null);
-    dp[0] = { score: 0, picks: [] };
+    // Dynamic programming balances target relevance and body-focus coverage.
+    const dp = Array.from({ length: target + 1 }, () => new Map());
+    dp[0].set(0, { score: 0, picks: [] });
     for (const item of items) {
       for (let t = target; t >= item.units; t--) {
-        const prev = dp[t - item.units];
-        if (!prev) continue;
-        const candidate = { score: prev.score + item.score, picks: prev.picks.concat(item) };
-        if (!dp[t] || candidate.score > dp[t].score) dp[t] = candidate;
+        for (const [mask, prev] of [...dp[t - item.units].entries()]) {
+          let nextMask = mask, novelty = 0;
+          for (const index of item.groups) {
+            const bit = 1 << index;
+            if (!(nextMask & bit) && !coveredFocus.has(groups[index])) novelty += 2;
+            nextMask |= bit;
+          }
+          const candidate = { score: prev.score + item.baseScore + novelty, picks: prev.picks.concat(item) };
+          const existing = dp[t].get(nextMask);
+          if (!existing || candidate.score > existing.score) dp[t].set(nextMask, candidate);
+        }
       }
     }
     let filled = target;
-    while (filled > 0 && !dp[filled]) filled--;
-    const selected = dp[filled] ? dp[filled].picks.map(x => x.card) : [];
-    selected.forEach(c => used.add(c.id));
+    while (filled > 0 && dp[filled].size === 0) filled--;
+    const states = [...dp[filled].values()].sort((x,y) => y.score - x.score);
+    const selected = states.length ? states[0].picks.map(x => x.card) : [];
+    selected.forEach(c => { used.add(c.id); (c.body_focus || []).forEach(g => coveredFocus.add(g)); });
     const estimated = round1(selected.reduce((s, c) => s + Number(c.estimated_active_minutes || 1.5), 0));
     const remaining = round1(Math.max(0, targetMinutes - estimated));
     return {
       stage, targetMinutes, estimatedSelectedMinutes: estimated, remainingMinutes: remaining,
       exercises: selected, complete: remaining <= 0.01,
+      focusCoverage: [...new Set(selected.flatMap(c => c.body_focus || []))],
       note: remaining > 0.01
         ? `Не хватает ${remaining} мин по текущим оценкам. Не повторяйте упражнения и не удлиняйте дозировку искусственно; добавьте проверенные карточки или измените длительность этапа.`
         : null
@@ -136,7 +147,8 @@
   }
   function generate(library, raw = {}) {
     const o = normalizeOptions(raw), split = stageSplit(o.totalMinutes), used = new Set();
-    const stages = STAGE_ORDER.map(s => chooseStage(library, s, split[s], o, used));
+    const coveredFocus = new Set();
+    const stages = STAGE_ORDER.map(s => chooseStage(library, s, split[s], o, used, coveredFocus));
     const active = round1(stages.reduce((n, s) => n + s.estimatedSelectedMinutes, 0));
     const breaks = REST_BREAKS_SECONDS.reduce((a, b) => a + b, 0);
     const plan = {
