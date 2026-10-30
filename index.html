@@ -104,6 +104,8 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
 @media(max-width:850px){.library-filters{grid-template-columns:1fr 1fr}.library-filters label:first-child{grid-column:1/-1}}
 @media(max-width:700px){.library-section{padding:55px 5vw}.library-grid{grid-template-columns:1fr}.library-filters{grid-template-columns:1fr}.library-filters label:first-child{grid-column:auto}}
 
+
+.workspace-section{padding:65px 6vw;background:#efeee7;scroll-margin-top:90px;min-height:50vh}.workspace-inner{max-width:1050px;margin:auto}.workspace-inner h2{margin:8px 0}.saved-list{display:grid;gap:10px;margin-top:20px}.saved-item,.settings-panel,.data-panel{background:var(--card);border:1px solid var(--line);padding:18px;margin-top:12px}.saved-item{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.saved-item h3{margin:0 0 4px;font-size:16px}.saved-item p{margin:0;color:var(--muted);font-size:12px}.saved-item-tools{display:flex;gap:8px}.settings-panel{max-width:760px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.settings-panel label{display:flex;flex-direction:column;gap:6px;font-size:12px}.settings-panel input,.settings-panel select{padding:11px;border:1px solid #ccc;background:#fff;font:inherit}.settings-panel button,.settings-panel>p{grid-column:1/-1}.file-button{display:inline-block;padding:10px;border:1px solid var(--line);font-size:12px;cursor:pointer}.file-button input{max-width:190px}.danger-button{color:#963f32!important}@media(max-width:650px){.workspace-section{padding:48px 5vw}.settings-panel{grid-template-columns:1fr}.settings-panel button,.settings-panel>p{grid-column:auto}}
 </style>
 </head>
 <body>
@@ -206,11 +208,11 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
   <div class="library-grid" id="library-results"><div class="empty">Загружаю упражнения…</div></div>
   <p class="safety">Карточки — рабочий справочный материал, а не индивидуальная медицинская рекомендация. Проверяйте технику и пригодность движений для конкретной группы.</p>
 </section>
-<section class="module-placeholder" id="templates"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · ЗАПЛАНИРОВАН</div><h2>Шаблоны занятий</h2><p>Здесь появится управление сохранёнными шаблонами и повторное использование готовых комплексов.</p></div></section>
+<section class="workspace-section" id="templates"><div class="workspace-inner"><div class="eyebrow">ЛИЧНАЯ БИБЛИОТЕКА</div><h2>Шаблоны <em>занятий.</em></h2><p class="muted">Сохраняйте комплексы и используйте их повторно на этом устройстве.</p><button class="btn" id="save-template" type="button">Сохранить текущий план как шаблон</button><p id="template-status" class="muted" role="status"></p><div id="template-list" class="saved-list"></div></div></section>
 <section class="module-placeholder" id="clients"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БУДУЩЕЕ РАСШИРЕНИЕ</div><h2>Клиенты и группы</h2><p>Раздел для организации индивидуальных занятий, постоянных групп и информации о подготовке участников.</p></div></section>
 <section class="module-placeholder" id="schedule"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БУДУЩЕЕ РАСШИРЕНИЕ</div><h2>Расписание</h2><p>Здесь будет календарь занятий. Пока планирование по датам не реализовано.</p></div></section>
-<section class="module-placeholder" id="history"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БУДУЩЕЕ РАСШИРЕНИЕ</div><h2>История и аналитика</h2><p>Будущий журнал сохранённых занятий и обзор активности. Аналитика пока не подключена.</p></div></section>
-<section class="module-placeholder" id="settings"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БАЗОВАЯ СТРУКТУРА</div><h2>Настройки</h2><p>Общие параметры и управление локальными данными будут добавлены отдельным шагом. Сейчас сайт не обещает синхронизацию между устройствами.</p></div></section>
+<section class="workspace-section" id="history"><div class="workspace-inner"><div class="eyebrow">ЛОКАЛЬНЫЕ ЗАПИСИ</div><h2>История <em>занятий.</em></h2><p class="muted">Автоматически сохранённые черновики. Данные доступны в этом браузере.</p><div id="history-list" class="saved-list"></div></div></section>
+<section class="workspace-section" id="settings"><div class="workspace-inner"><div class="eyebrow">ПАРАМЕТРЫ ПРИЛОЖЕНИЯ</div><h2>Настройки <em>и данные.</em></h2><p class="muted">Настройки, история и шаблоны хранятся локально в этом браузере. Между устройствами они не синхронизируются.</p><div class="settings-panel"><label>Имя инструктора<input id="setting-instructor" maxlength="80" placeholder="Необязательно"></label><label>Длительность<select id="setting-duration"><option>30</option><option>45</option><option>60</option><option>75</option><option>90</option><option>120</option></select></label><label>Уровень<select id="setting-level"><option value="beginner">Начальный</option><option value="intermediate">Средний</option><option value="intermediate-advanced">Средний–сложный</option><option value="advanced">Продвинутый</option><option value="mixed">Смешанная группа</option></select></label><label>Фокус<select id="setting-focus"><option value="posture">Осанка</option><option value="arms">Руки и плечевой пояс</option><option value="core">Мышцы кора</option><option value="legs">Ноги и ягодицы</option><option value="mobility">Подвижность</option><option value="balance">Баланс</option><option value="full">Всё тело</option><option value="stretch">Растяжка</option><option value="breathing">Дыхание</option></select></label><label>Оборудование<select id="setting-equipment"><option value="none">Без оборудования</option><option value="mat">Коврик</option><option value="band">Лента</option><option value="ball">Малый мяч</option><option value="ring">Кольцо</option><option value="block">Блок</option><option value="weights">Лёгкие гантели</option><option value="chair">Стул / опора</option><option value="mixed">Разное оборудование</option></select></label><button class="btn" id="save-settings" type="button">Сохранить настройки</button><p id="settings-status" class="muted" role="status"></p></div><div class="data-panel"><h3>Резервная копия</h3><p class="muted">Скачайте JSON с настройками, историей и шаблонами. Импортируйте его на другом устройстве для восстановления.</p><button class="plain" id="export-data" type="button">Экспортировать данные</button><label class="file-button">Импортировать JSON<input id="import-data" type="file" accept=".json,application/json"></label><p id="backup-status" class="muted" role="status"></p></div><div class="data-panel"><h3>Очистка данных</h3><p class="muted">Удаляет локальные настройки, историю и шаблоны в этом браузере.</p><button class="plain danger-button" id="clear-data" type="button">Удалить локальные данные</button></div></div></section>
 
 <footer class="footer"><strong>Pilates by emoveo</strong><span>Осознанное движение. Продуманный процесс.</span><span>© <span id="year"></span> emoveo</span></footer>
 <script src="js/generator.v1.js"></script>
@@ -332,6 +334,27 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
     return lines.join("\n");
   }
   let currentPlan = null, currentLibrary = null, currentOptions = null;
+
+  const STORE_KEY="emoveo.pilates.local.v1";
+  const blankStore=()=>({version:1,settings:{instructor:"",duration:"60",level:"intermediate",focus:"posture",equipment:"mat"},plans:[],templates:[]});
+  function readStore(){try{const x=JSON.parse(localStorage.getItem(STORE_KEY)||"null");return x&&x.version===1?{...blankStore(),...x,settings:{...blankStore().settings,...x.settings},plans:Array.isArray(x.plans)?x.plans:[],templates:Array.isArray(x.templates)?x.templates:[]}:blankStore()}catch(e){return blankStore()}}
+  let store=blankStore();
+  function writeStore(){try{localStorage.setItem(STORE_KEY,JSON.stringify(store));return true}catch(e){return false}}
+  function takeSnapshot(){return currentPlan?{id:"p"+Date.now(),savedAt:new Date().toISOString(),options:{...currentOptions},plan:JSON.parse(JSON.stringify(currentPlan))}:null}
+  function saveHistory(){const x=takeSnapshot();if(!x)return;store.plans.unshift(x);store.plans=store.plans.slice(0,80);if(!writeStore())status.textContent="Не удалось сохранить данные: проверьте свободное место в браузере.";drawHistory()}
+  function drawHistory(){const el=$("history-list");if(!el)return;el.innerHTML=store.plans.length?store.plans.map(x=>'<article class="saved-item"><div><h3>Занятие · '+escapeHtml(x.plan.targetMinutes)+' минут</h3><p>'+new Date(x.savedAt).toLocaleString("ru-RU")+' · '+x.plan.stages.reduce((n,s)=>n+s.exercises.length,0)+' упражнений</p></div><div class="saved-item-tools"><button class="plain" data-open-plan="'+x.id+'">Открыть</button><button class="plain" data-remove-plan="'+x.id+'">Удалить</button></div></article>').join(""):'<div class="empty">Сохранённых занятий пока нет.</div>'}
+  function drawTemplates(){const el=$("template-list");if(!el)return;el.innerHTML=store.templates.length?store.templates.map(x=>'<article class="saved-item"><div><h3>'+escapeHtml(x.name)+'</h3><p>'+x.plan.targetMinutes+' минут · '+new Date(x.savedAt).toLocaleDateString("ru-RU")+'</p></div><div class="saved-item-tools"><button class="plain" data-open-template="'+x.id+'">Использовать</button><button class="plain" data-remove-template="'+x.id+'">Удалить</button></div></article>').join(""):'<div class="empty">Шаблонов пока нет. Создайте план и сохраните его.</div>'}
+  function openSnapshot(x){if(!x)return;currentPlan=JSON.parse(JSON.stringify(x.plan));currentOptions={...x.options};renderPlan();$("planner").scrollIntoView({behavior:"smooth"})}
+  function initSettings(){const s=store.settings;$("setting-instructor").value=s.instructor;$("setting-duration").value=s.duration;$("setting-level").value=s.level;$("setting-focus").value=s.focus;$("setting-equipment").value=s.equipment;$("duration").value=s.duration;$("level").value=s.level;$("focus").value=s.focus;$("equipment").value=s.equipment}
+  $("save-template").addEventListener("click",()=>{if(!currentPlan){$("template-status").textContent="Сначала создайте занятие.";return}const n=prompt("Название шаблона","Комплекс "+currentPlan.targetMinutes+" минут");if(!n||!n.trim())return;const x=takeSnapshot();store.templates.unshift({...x,id:"t"+Date.now(),name:n.trim().slice(0,100)});store.templates=store.templates.slice(0,80);$("template-status").textContent=writeStore()?"Шаблон сохранён на этом устройстве.":"Ошибка сохранения.";drawTemplates()});
+  $("template-list").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.openTemplate)openSnapshot(store.templates.find(x=>x.id===b.dataset.openTemplate));if(b.dataset.removeTemplate&&confirm("Удалить шаблон?")){store.templates=store.templates.filter(x=>x.id!==b.dataset.removeTemplate);writeStore();drawTemplates()}});
+  $("history-list").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.openPlan)openSnapshot(store.plans.find(x=>x.id===b.dataset.openPlan));if(b.dataset.removePlan&&confirm("Удалить запись?")){store.plans=store.plans.filter(x=>x.id!==b.dataset.removePlan);writeStore();drawHistory()}});
+  $("save-settings").addEventListener("click",()=>{store.settings={instructor:$("setting-instructor").value.trim(),duration:$("setting-duration").value,level:$("setting-level").value,focus:$("setting-focus").value,equipment:$("setting-equipment").value};$("settings-status").textContent=writeStore()?"Настройки сохранены и применены к планировщику.":"Не удалось сохранить настройки.";initSettings()});
+  $("export-data").addEventListener("click",()=>{const blob=new Blob([JSON.stringify({app:"Pilates by emoveo",format_version:1,exported_at:new Date().toISOString(),data:store},null,2)],{type:"application/json"});const url=URL.createObjectURL(blob),link=document.createElement("a");link.href=url;link.download="pilates-emoveo-backup.json";document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(url);$("backup-status").textContent="Файл резервной копии скачан."});
+  $("import-data").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>5242880)throw Error("Размер файла превышает 5 МБ.");const obj=JSON.parse(await file.text()),d=obj.data;if(obj.app!=="Pilates by emoveo"||obj.format_version!==1||!d||d.version!==1||!Array.isArray(d.plans)||!Array.isArray(d.templates)||!d.settings)throw Error("Это не резервная копия Pilates by emoveo.");store={...blankStore(),...d};if(!writeStore())throw Error("Недостаточно места в браузере.");initSettings();drawHistory();drawTemplates();$("backup-status").textContent="Данные восстановлены."}catch(err){$("backup-status").textContent="Ошибка импорта: "+err.message}finally{e.target.value=""}});
+  $("clear-data").addEventListener("click",()=>{if(!confirm("Удалить настройки, историю и шаблоны?"))return;localStorage.removeItem(STORE_KEY);store=blankStore();initSettings();drawHistory();drawTemplates();$("settings-status").textContent="Локальные данные удалены."});
+  store=readStore();initSettings();drawHistory();drawTemplates();
+
   function allIds(){return new Set(currentPlan.stages.flatMap(s=>s.exercises.map(c=>c.id)));}
   function recalc(){
     currentPlan.stages.forEach(s=>{
@@ -445,7 +468,7 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
       if(!Number.isFinite(duration)||duration<15||!focusGoals[focus]||!engineLevels[level]||!equipmentLabels[equipment])throw new Error("Проверьте выбранные параметры.");
       currentLibrary=await loadLibrary();currentOptions={level,focus,equipment,engineLevel:engineLevels[level],equipmentIds:equipmentOptions(equipment)};
       currentPlan=window.PilatesGeneratorV1.generate(currentLibrary,{totalMinutes:duration,level:currentOptions.engineLevel,goals:focusGoals[focus],equipment:currentOptions.equipmentIds});
-      renderPlan();result.scrollIntoView({behavior:"smooth",block:"start"});
+      renderPlan();saveHistory();result.scrollIntoView({behavior:"smooth",block:"start"});
     }catch(error){result.innerHTML='<div class="empty"><strong>Не удалось создать черновик.</strong><br>'+escapeHtml(error.message||"Неизвестная ошибка")+'</div>';status.textContent="Генерация не завершилась.";}
     finally{submitButton.disabled=false;submitButton.textContent="Составить черновик ↗";}
   });
@@ -455,7 +478,7 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
     if(!stage||!card)return;
     if(control.dataset.action==="replace"){const i=stage.exercises.findIndex(c=>c.id===control.dataset.current);if(i>=0)stage.exercises[i]=card;}
     if(control.dataset.action==="add")stage.exercises.push(card);
-    recalc();renderPlan();
+    recalc();renderPlan();saveHistory();
   });
   result.addEventListener("click",async event=>{
     const button=event.target.closest("button[data-action],#copy-plan");if(!button||!currentPlan)return;
@@ -471,7 +494,7 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
     if(button.dataset.action==="remove")stage.exercises.splice(i,1);
     if(button.dataset.action==="up"&&i>0)[stage.exercises[i-1],stage.exercises[i]]=[stage.exercises[i],stage.exercises[i-1]];
     if(button.dataset.action==="down"&&i>=0&&i<stage.exercises.length-1)[stage.exercises[i+1],stage.exercises[i]]=[stage.exercises[i],stage.exercises[i+1]];
-    recalc();renderPlan();
+    recalc();renderPlan();saveHistory();
   });
   form.addEventListener("reset", () => {
     window.setTimeout(() => {
