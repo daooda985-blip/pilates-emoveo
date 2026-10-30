@@ -83,6 +83,27 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
 @media(max-width:700px){.app-header{gap:10px}.app-header nav{gap:8px 14px}.workspace{padding:30px 5vw}.module-placeholder{padding:28px 5vw}}
 @media(max-width:420px){.workspace-grid{grid-template-columns:1fr}.workspace-tile{min-height:0}}
 
+
+/* Exercise library */
+.library-section{padding:75px 6vw;background:#efeee7;scroll-margin-top:95px}
+.library-head{max-width:760px}.library-head h2{margin:8px 0 12px}
+.library-filters{display:grid;grid-template-columns:minmax(220px,2fr) repeat(2,minmax(170px,1fr)) auto;gap:12px;align-items:end;margin:28px 0 12px;padding:18px;background:var(--card);border:1px solid var(--line)}
+.library-filters label{display:flex;flex-direction:column;gap:7px;font-size:11px;font-weight:bold}
+.library-filters input,.library-filters select{width:100%;min-width:0;padding:12px;border:1px solid #ccc;background:white;color:var(--ink);font:inherit;font-size:13px}
+.library-count{font-size:12px;color:var(--muted);min-height:1.5em}
+.library-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.library-card{background:var(--card);border:1px solid var(--line);padding:20px;min-width:0}
+.library-card h3{font-size:18px;line-height:1.3;margin:8px 0}
+.library-card .library-meta{font-size:11px;color:var(--muted)}
+.library-card details{border-top:1px solid var(--line);margin-top:14px;padding-top:10px}
+.library-card summary{cursor:pointer;color:var(--olive);font-size:12px;font-weight:bold}
+.library-card details p,.library-card details li{font-size:12px;line-height:1.7}
+.library-card details h4{font-size:12px;margin:14px 0 4px}
+.library-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.library-tag{font-size:10px;padding:4px 8px;background:#e9e8df;color:#55594e}
+@media(max-width:850px){.library-filters{grid-template-columns:1fr 1fr}.library-filters label:first-child{grid-column:1/-1}}
+@media(max-width:700px){.library-section{padding:55px 5vw}.library-grid{grid-template-columns:1fr}.library-filters{grid-template-columns:1fr}.library-filters label:first-child{grid-column:auto}}
+
 </style>
 </head>
 <body>
@@ -173,7 +194,18 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
   <div><p class="muted">Хорошее занятие не обязано быть изнурительным. Важны ясная логика, внимание к участникам и возможность менять план под реальную группу.</p><p class="muted">Это первая версия сайта Pilates by emoveo. План формируется в браузере и пока не сохраняется автоматически.</p></div>
 </section>
 </main>
-<section class="module-placeholder" id="library"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БАЗОВАЯ ВЕРСИЯ</div><h2>Библиотека упражнений</h2><p>Каталог уже используется планировщиком. Отдельный интерфейс поиска, фильтров и подробного просмотра карточек будет добавлен следующим шагом.</p><a class="btn" href="#planner">Перейти к планировщику</a></div></section>
+<section class="library-section" id="library">
+  <div class="library-head"><div class="eyebrow">КАТАЛОГ · 40 УПРАЖНЕНИЙ</div><h2>Библиотека <em>движения.</em></h2><p class="muted">Ищите упражнения по названию, направлению или этапу занятия. Откройте карточку, чтобы посмотреть технику и варианты адаптации.</p></div>
+  <div class="library-filters">
+    <label>Поиск<input id="library-search" type="search" placeholder="Например, плечи, таз, breathing…"></label>
+    <label>Этап занятия<select id="library-stage"><option value="">Все этапы</option><option value="warm_up">Разминка</option><option value="main">Основной комплекс</option><option value="stretch">Завершение и растяжка</option><option value="warm_up_or_main">Разминка или основной</option></select></label>
+    <label>Направление<select id="library-focus"><option value="">Все направления</option></select></label>
+    <button class="plain" id="library-reset" type="button">Сбросить фильтры</button>
+  </div>
+  <p class="library-count" id="library-count" role="status" aria-live="polite">Загружаю каталог…</p>
+  <div class="library-grid" id="library-results"><div class="empty">Загружаю упражнения…</div></div>
+  <p class="safety">Карточки — рабочий справочный материал, а не индивидуальная медицинская рекомендация. Проверяйте технику и пригодность движений для конкретной группы.</p>
+</section>
 <section class="module-placeholder" id="templates"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · ЗАПЛАНИРОВАН</div><h2>Шаблоны занятий</h2><p>Здесь появится управление сохранёнными шаблонами и повторное использование готовых комплексов.</p></div></section>
 <section class="module-placeholder" id="clients"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БУДУЩЕЕ РАСШИРЕНИЕ</div><h2>Клиенты и группы</h2><p>Раздел для организации индивидуальных занятий, постоянных групп и информации о подготовке участников.</p></div></section>
 <section class="module-placeholder" id="schedule"><div class="placeholder-inner"><div class="module-state">МОДУЛЬ · БУДУЩЕЕ РАСШИРЕНИЕ</div><h2>Расписание</h2><p>Здесь будет календарь занятий. Пока планирование по датам не реализовано.</p></div></section>
@@ -359,6 +391,52 @@ nav{gap:12px;font-size:11px;flex-wrap:wrap}
     out.push("Общий шаблон, не медицинская рекомендация. Инструктор должен адаптировать упражнения под группу.");
     return out.join("\n");
   }
+
+
+  const librarySearch = $("library-search");
+  const libraryStage = $("library-stage");
+  const libraryFocus = $("library-focus");
+  const libraryResults = $("library-results");
+  const libraryCount = $("library-count");
+  const stageNames = {warm_up:"Разминка",main:"Основной комплекс",stretch:"Завершение и растяжка",warm_up_or_main:"Разминка или основной этап"};
+  function renderLibrary() {
+    if (!currentLibrary || !libraryResults) return;
+    const query = (librarySearch.value || "").trim().toLocaleLowerCase("ru");
+    const stage = libraryStage.value, focus = libraryFocus.value;
+    const filtered = currentLibrary.cards.filter(card => {
+      const haystack = [card.name_ru,card.name_en,card.id,card.equipment,...(card.tags||[]),...(card.goals||[]),...(card.body_focus||[])].join(" ").toLocaleLowerCase("ru");
+      return (!query || haystack.includes(query)) &&
+        (!stage || card.stage === stage || (stage === "warm_up_or_main" && card.stage === "warm_up_or_main")) &&
+        (!focus || (card.body_focus||[]).includes(focus));
+    });
+    libraryCount.textContent = "Найдено упражнений: " + filtered.length + " из " + currentLibrary.cards.length;
+    if (!filtered.length) {
+      libraryResults.innerHTML = '<div class="empty">По этим параметрам ничего не найдено. Попробуйте изменить запрос или сбросить фильтры.</div>';
+      return;
+    }
+    libraryResults.innerHTML = filtered.map(card => {
+      const video = card.demonstration_url
+        ? '<p><a href="'+escapeHtml(card.demonstration_url)+'" target="_blank" rel="noopener noreferrer">Открыть демонстрацию</a></p>'
+        : '<p class="muted">Видео: точная демонстрация пока не проверена.</p>';
+      const tags = (card.body_focus||[]).map(x=>'<span class="library-tag">'+escapeHtml(x)+'</span>').join("");
+      return '<article class="library-card"><div class="eyebrow">'+escapeHtml(stageNames[card.stage]||card.stage)+'</div><h3>'+escapeHtml(card.name_ru)+'</h3><div class="library-meta">'+escapeHtml(card.name_en)+' · '+escapeHtml(card.estimated_active_minutes||"—")+' мин · '+escapeHtml(card.equipment||"Без оборудования")+'</div><div class="library-tags">'+tags+'</div><details><summary>Техника и подробности</summary><h4>Исходное положение</h4><p>'+escapeHtml(card.starting_position||"Не указано")+'</p><h4>Техника выполнения</h4>'+listHtml(card.technique_steps)+'<h4>Дозировка</h4><p>'+escapeHtml(card.dosage||"Не указана")+'</p><h4>Дыхание</h4><p>'+escapeHtml(card.breathing||"Не указано")+'</p><h4>Упрощение</h4><p>'+escapeHtml(card.easier_option||"Не указано")+'</p><h4>Вариант усложнения</h4><p>'+escapeHtml(card.progression_option||"Не указано")+'</p><h4>Переход</h4><p>'+escapeHtml(card.transition||"Не указан")+'</p><h4>Меры предосторожности</h4><p>'+escapeHtml(card.safety_notes||"Проверьте пригодность упражнения для группы.")+'</p>'+video+'<p class="library-meta">Статус карточки: '+escapeHtml(card.review_status||"не указан")+'. '+escapeHtml(card.review_note||"")+'</p></details></article>';
+    }).join("");
+  }
+  async function initializeLibrary() {
+    if (!libraryResults) return;
+    try {
+      currentLibrary = await loadLibrary();
+      const focuses = [...new Set(currentLibrary.cards.flatMap(card=>card.body_focus||[]))].sort((a,b)=>a.localeCompare(b,"ru"));
+      libraryFocus.innerHTML = '<option value="">Все направления</option>' + focuses.map(f=>'<option value="'+escapeHtml(f)+'">'+escapeHtml(f)+'</option>').join("");
+      renderLibrary();
+    } catch (error) {
+      libraryCount.textContent = "Каталог недоступен";
+      libraryResults.innerHTML = '<div class="empty">'+escapeHtml(error.message||"Не удалось загрузить каталог.")+'</div>';
+    }
+  }
+  [librarySearch,libraryStage,libraryFocus].forEach(control=>control.addEventListener(control===librarySearch?"input":"change",renderLibrary));
+  $("library-reset").addEventListener("click",()=>{librarySearch.value="";libraryStage.value="";libraryFocus.value="";renderLibrary();});
+  initializeLibrary();
 
   form.addEventListener("submit", async event=>{
     event.preventDefault();submitButton.disabled=true;submitButton.textContent="Формируем…";status.textContent="Загружаю библиотеку и подбираю упражнения…";
