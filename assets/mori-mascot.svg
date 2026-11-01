@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 380" role="img" aria-labelledby="t d">
+<title id="t">Mori — emoveo movement spirit</title>
+<desc id="d">An abstract floating seed-like companion formed by a folded petal, a small moon and a broken orbit.</desc>
+<defs>
+ <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead8df"/><stop offset=".55" stop-color="#c39caf"/><stop offset="1" stop-color="#82647f"/></linearGradient>
+ <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f2dfe6" stop-opacity=".8"/><stop offset="1" stop-color="#b58ba4" stop-opacity=".18"/></linearGradient>
+</defs>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M60 252C10 176 67 65 168 48c69-12 119 27 127 81" stroke="#d6b5c4" stroke-width="1.5" opacity=".8"/>
+ <path d="M294 170c-7 76-83 133-160 113" stroke="#d6b5c4" stroke-width="1.5" stroke-dasharray="2 9" opacity=".7"/>
+ <path d="M80 88c26-27 57-38 91-39" stroke="#a77d96" stroke-width="1" opacity=".65"/>
+ <path d="M157 43c-42 47-67 96-58 143 7 39 39 70 70 87 23-33 43-76 37-119-5-39-24-77-49-111Z" fill="url(#petal)" stroke="#f0dce5" stroke-width="2"/>
+ <path d="M157 43c-3 68 3 142 12 230" stroke="#f7e8ec" stroke-width="1.5" opacity=".75"/>
+ <path d="M100 181c-25 7-46 28-53 54 31 5 57-6 77-31" fill="url(#shade)" stroke="#c39caf" stroke-width="1.5"/>
+ <path d="M185 175c29 0 52 16 66 41-27 14-55 11-79-7" fill="url(#shade)" stroke="#c39caf" stroke-width="1.5"/>
+ <path d="M147 148c7-6 14-6 21 0" stroke="#342638" stroke-width="2"/>
+ <path d="M181 148c5-5 10-5 15 0" stroke="#342638" stroke-width="2"/>
+ <path d="M164 166c5 4 10 4 15 0" stroke="#8a5f78" stroke-width="1.7"/>
+ <path d="M152 202c11 8 23 8 34 0" stroke="#f5e6eb" stroke-width="1.2" opacity=".9"/>
+ <path d="M116 275c25 19 62 27 97 17" stroke="#e4c5d0" stroke-width="1.4"/>
+ <circle cx="264" cy="83" r="11" fill="#b66f72" stroke="none"/>
+ <path d="M264 59v-9m0 66v-9m24-24h-9m-30 0h-9" stroke="#d7b4c4" stroke-width="1.3"/>
+ <path d="M64 302c12-7 25-8 38-3" stroke="#d7b4c4" stroke-width="1.3"/>
+</g>
+</svg>
