@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="Абстрактная графика дыхания и движения">
+<g fill="none" stroke-linecap="round">
+ <path d="M-20 280C110 30 255 20 400 180S680 340 820 55" stroke="#b68da5" stroke-width="1.4" opacity=".8"/>
+ <path d="M-20 310C115 75 255 60 400 205S680 360 820 95" stroke="#d9b8c7" stroke-width="1" opacity=".65"/>
+ <path d="M-20 250C120 0 265 0 410 155S685 305 820 20" stroke="#8e718e" stroke-width="1" stroke-dasharray="3 9" opacity=".7"/>
+ <path d="M398 48c-49 51-60 99 0 157 60-58 49-106 0-157Z" stroke="#ead8df" stroke-width="1.6"/>
+ <path d="M398 205c-55-3-88-31-99-83 51 2 83 28 99 83Z" stroke="#c39caf" stroke-width="1.4"/>
+ <path d="M398 205c55-3 88-31 99-83-51 2-83 28-99 83Z" stroke="#c39caf" stroke-width="1.4"/>
+ <circle cx="398" cy="205" r="4" fill="#b66f72" stroke="none"/>
+</g></svg>
