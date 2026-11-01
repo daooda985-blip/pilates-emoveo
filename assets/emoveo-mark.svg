@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+<title id="title">emoveo mark</title><desc id="desc">An abstract lotus emerging from an incomplete ink circle.</desc>
+<rect width="160" height="160" fill="none"/>
+<path d="M112 22a62 62 0 1 0 25 57" fill="none" stroke="#d9b8c7" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M80 119C52 99 49 75 80 40c31 35 28 59 0 79Z" fill="none" stroke="#f0dce5" stroke-width="3"/>
+<path d="M80 119C46 116 29 98 25 72c29 1 48 15 55 47Z" fill="none" stroke="#c49caf" stroke-width="2.5"/>
+<path d="M80 119c34-3 51-21 55-47-29 1-48 15-55 47Z" fill="none" stroke="#c49caf" stroke-width="2.5"/>
+<path d="M80 120v19" stroke="#e4c5d0" stroke-width="2"/>
+<circle cx="128" cy="34" r="5" fill="#b66f72"/>
+<path d="M19 131h18" stroke="#b66f72" stroke-width="3"/>
+</svg>
