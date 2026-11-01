@@ -225,6 +225,34 @@ h1 em,h2 em{font-weight:400;color:#8d647b}
 }
 @media(max-width:420px){.workspace-grid{grid-template-columns:1fr}.emoveo-brand .brand-word{font-size:23px}}
 
+
+/* Mori companion + signature editorial ornament */
+.hero-mori{position:relative}
+.mori-companion{position:absolute;z-index:0;width:clamp(190px,27vw,360px);height:auto;right:7%;top:50%;transform:translateY(-48%);opacity:.9;filter:drop-shadow(0 18px 35px rgba(14,8,18,.18));pointer-events:none}
+.hero-mori>div:first-of-type{position:relative;z-index:1}
+.hero-mori:before{background:
+ radial-gradient(ellipse at 77% 46%,rgba(210,178,197,.48),transparent 28%),
+ radial-gradient(ellipse at 76% 90%,rgba(112,79,113,.58),transparent 36%),
+ linear-gradient(112deg,#211a27 0%,#392b3d 48%,#b79cab 100%)}
+.workspace-head{position:relative}
+.workspace-head:after{content:"呼吸 / 身";display:block;position:absolute;right:2%;top:-6px;color:#9d7c91;font:italic 13px Georgia,serif;letter-spacing:.32em;opacity:.8}
+.workspace-tile{position:relative}
+.workspace-tile:after{content:"";position:absolute;left:22px;bottom:13px;width:22px;height:1px;background:#b68da5;transition:width .2s}
+.workspace-tile:hover:after{width:52px}
+.library-head{position:relative}
+.library-head:after{content:"";display:block;width:min(100%,520px);height:70px;margin-top:18px;background:url('assets/breath-orbit.svg') center/cover no-repeat;opacity:.65}
+@media(max-width:700px){
+ .mori-companion{width:155px;right:2%;top:auto;bottom:12px;transform:none;opacity:.48}
+ .hero-mori>div:first-of-type{max-width:82%;z-index:1}
+ .workspace-head:after{position:static;margin-top:15px}
+ .library-head:after{height:45px}
+}
+@media(prefers-reduced-motion:no-preference){
+ .mori-companion{animation:mori-drift 8s ease-in-out infinite}
+ @keyframes mori-drift{0%,100%{translate:0 0}50%{translate:0 -9px}}
+}
+@media(prefers-reduced-motion:reduce){.mori-companion{animation:none}}
+
 </style>
 </head>
 <body>
@@ -252,7 +280,8 @@ h1 em,h2 em{font-weight:400;color:#8d647b}
     <a class="workspace-tile" href="#about"><span class="tile-icon">08</span><strong>О проекте</strong><p>Принципы Pilates by emoveo.</p></a>
   </div>
 </section>
-<section class="hero">
+<section class="hero hero-mori">
+  <img class="mori-companion" src="assets/mori-mascot.svg" alt="" aria-hidden="true">
   <div>
     <p class="eyebrow">ПРОСТРАНСТВО ДЛЯ ДВИЖЕНИЯ</p>
     <h1>Больше гармонии.<br><em>Меньше хаоса</em><br>в планировании.</h1>
