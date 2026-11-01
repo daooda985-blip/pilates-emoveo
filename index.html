@@ -115,11 +115,121 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 
 
 .workspace-section{padding:65px 6vw;background:#efeee7;scroll-margin-top:90px;min-height:50vh}.workspace-inner{max-width:1050px;margin:auto}.workspace-inner h2{margin:8px 0}.saved-list{display:grid;gap:10px;margin-top:20px}.saved-item,.settings-panel,.data-panel{background:var(--card);border:1px solid var(--line);padding:18px;margin-top:12px}.saved-item{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.saved-item h3{margin:0 0 4px;font-size:16px}.saved-item p{margin:0;color:var(--muted);font-size:12px}.saved-item-tools{display:flex;gap:8px}.settings-panel{max-width:760px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.settings-panel label{display:flex;flex-direction:column;gap:6px;font-size:12px}.settings-panel input,.settings-panel select{padding:11px;border:1px solid #ccc;background:#fff;font:inherit}.settings-panel button,.settings-panel>p{grid-column:1/-1}.file-button{display:inline-block;padding:10px;border:1px solid var(--line);font-size:12px;cursor:pointer}.file-button input{max-width:190px}.danger-button{color:#963f32!important}@media(max-width:650px){.workspace-section{padding:48px 5vw}.settings-panel{grid-template-columns:1fr}.settings-panel button,.settings-panel>p{grid-column:auto}}
+
+/* EMOVEO / MIST ARCHIVE — editorial redesign */
+:root{
+ --ink:#211b27;--paper:#e9e2df;--sage:#8b7b89;--olive:#6c5b70;--muted:#716873;
+ --card:#ded4d4;--line:#b7a9b0;--plum:#241a29;--plum2:#38283c;--rose:#b98c9e;
+ --lilac:#c5b5cb;--fog:#e8dcdf;--vermilion:#a84f48;
+}
+body{background:#e9e2df;color:#211b27;font-family:Georgia,'Times New Roman',serif;letter-spacing:.005em}
+.header{background:#211a25;color:#eee4e7;border:0;padding:17px 5vw 15px;align-items:center}
+.emoveo-brand{display:grid;grid-template-columns:42px auto;grid-template-rows:23px 13px;column-gap:11px;align-items:center;min-width:190px}
+.emoveo-brand img{grid-row:1/3;width:42px;height:42px;object-fit:contain}
+.emoveo-brand .brand-word{font:26px/1 Georgia,serif;letter-spacing:.08em;color:#f0e2e7}
+.emoveo-brand .brand-sub{font:8px/1 Arial,sans-serif;letter-spacing:.2em;color:#c5aebd}
+.app-header nav{gap:clamp(12px,1.5vw,23px)}
+.app-header nav a{font:10px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#d4c5d0}
+.app-header nav a:hover,.app-header nav a:focus-visible{color:#e6aebe;border-color:#e6aebe}
+.nav-toggle{background:#b58da2;color:#211a25}
+.workspace{background:#e9e2df;padding:50px 6vw 42px}
+.workspace-head{align-items:end}
+.eyebrow{font:9px/1.5 Arial,sans-serif;letter-spacing:.22em;color:#8a596e;text-transform:uppercase}
+h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.045em}
+h1{font-size:clamp(48px,7.2vw,100px);line-height:.96}
+h1 em,h2 em{font-weight:400;color:#8d647b}
+.lead{font:14px/1.9 Arial,sans-serif;color:#655b66;max-width:480px}
+.btn{background:#2b202f;color:#f1e5e8;border:1px solid #2b202f;padding:15px 22px;font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.btn:hover{background:#8a637c;border-color:#8a637c}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:590px;padding:90px 7vw;background:
+ radial-gradient(ellipse at 72% 36%,rgba(210,178,197,.72),transparent 28%),
+ radial-gradient(ellipse at 75% 90%,rgba(112,79,113,.65),transparent 36%),
+ linear-gradient(112deg,#211a27 0%,#392b3d 48%,#b79cab 100%);color:#f1e7e9}
+.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:
+ radial-gradient(circle at 73% 42%,transparent 0 18%,rgba(241,222,229,.34) 18.2%,transparent 18.5% 27%,rgba(241,222,229,.18) 27.2%,transparent 27.5%),
+ linear-gradient(120deg,transparent 35%,rgba(246,218,229,.13) 55%,transparent 73%),
+ repeating-linear-gradient(172deg,transparent 0 42px,rgba(245,226,234,.055) 43px,transparent 44px)}
+.hero:after{content:"呼吸   ·   身";position:absolute;right:7%;top:16%;font:22px/2 Georgia,serif;letter-spacing:.45em;color:rgba(248,231,237,.78);writing-mode:vertical-rl}
+.hero>div:first-child{max-width:580px}
+.hero .eyebrow{color:#e0b4c4}
+.hero h1{color:#f5e9eb}
+.hero h1 em{color:#e2b8c8}
+.hero .lead{color:#e0d1d8;max-width:440px}
+.hero .btn{background:#e4c5d0;color:#291f2e;border-color:#e4c5d0}
+.hero .art{display:none}
+.hero .lead:after{content:"";display:block;width:72px;height:1px;background:#d9aabc;margin-top:28px}
+.strip{background:#302537;color:#d8c1cc;font:9px Arial,sans-serif;letter-spacing:.2em;padding:19px 6vw}
+.section{padding:85px 7vw}
+.section .intro{max-width:800px}
+.cards{grid-template-columns:1.1fr 1.4fr .9fr;gap:0;border-top:1px solid #b9aab3;border-bottom:1px solid #b9aab3}
+.card,.card.dark{background:transparent;color:#2b2230;border:0;border-right:1px solid #b9aab3;padding:30px 26px;min-height:210px}
+.card:last-child{border-right:0}
+.card.dark{background:#332638;color:#f0e3e8}
+.card p,.card.dark p{font:12px/1.8 Arial,sans-serif;color:#776c76}
+.card.dark p{color:#d4c2cd}
+.card h3{font:26px/1.1 Georgia,serif;font-weight:400}
+.planner{background:#dcd1d5}
+.form{background:transparent;border:0;border-top:1px solid #a99aa4;border-bottom:1px solid #a99aa4;padding:24px 0;gap:22px}
+.form label,.library-filters label{font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6b5968}
+.form select,.library-filters input,.library-filters select{border:0;border-bottom:1px solid #9f8d9a;background:transparent;border-radius:0;padding:13px 3px;font:14px Georgia,serif;color:#2c2330}
+.result .empty,.coach{background:#cfc0c9;color:#4c3c4d}
+.stagegrid{gap:0;border-top:1px solid #b4a2af;border-bottom:1px solid #b4a2af}
+.stage{background:transparent;border:0;border-right:1px solid #b4a2af;border-radius:0;padding:22px}
+.stage:last-child{border-right:0}
+.stage h4{font:20px Georgia,serif;font-weight:400}
+.stage p{font:12px/1.8 Arial,sans-serif}
+.time{color:#8a5e78}
+.exercise-tools{border-color:#b4a2af}
+.plain{color:#4e4050}
+.approach{background:#2b202f;color:#eee2e7}
+.approach .eyebrow{color:#d7a9bd}
+.approach h2,.approach h2 em{color:#f0dce5}
+.approach .muted{color:#cbbbc6;font:14px/2 Georgia,serif}
+.library-section{background:#e9e2df}
+.library-filters{background:transparent;border:0;border-top:1px solid #b8a8b1;border-bottom:1px solid #b8a8b1;padding:20px 0}
+.library-grid{gap:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.library-card{background:transparent;border:0;border-bottom:1px solid #c1b3ba;padding:24px 20px}
+.library-card:nth-child(odd){border-right:1px solid #c1b3ba}
+.library-card h3{font:24px Georgia,serif;font-weight:400}
+.library-card details{border-color:#c1b3ba}
+.library-card summary{color:#8a5e78}
+.library-tag{background:#d8cbd1;color:#514451;border-radius:0}
+.workspace-section{background:#e2d8dc}
+.saved-item,.settings-panel,.data-panel{background:transparent;border:0;border-top:1px solid #b8a8b1;border-radius:0;padding:20px 0}
+.module-placeholder{background:#e9e2df}
+.module-placeholder .placeholder-inner{background:transparent;border-top:1px solid #b8a8b1;padding:28px 0}
+.workspace-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid #b8a8b1;border-left:1px solid #b8a8b1}
+.workspace-tile{background:transparent;border:0;border-right:1px solid #b8a8b1;border-bottom:1px solid #b8a8b1;padding:22px;min-height:160px}
+.workspace-tile:hover{transform:none;background:#ded2d8}
+.tile-icon{font:italic 28px Georgia,serif;color:#9a6f87}
+.footer{background:#211a25;color:#d1c1ca;padding:25px 6vw}
+.safety{font:11px/1.8 Arial,sans-serif}
+.status{color:#76506a}
+@media(max-width:900px){.workspace-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+ .header{padding:15px 5vw;flex-direction:row;align-items:center}
+ .emoveo-brand{min-width:0}
+ .nav-toggle{font-size:10px;padding:10px}
+ .hero{min-height:500px;padding:65px 6vw;background:radial-gradient(ellipse at 80% 60%,rgba(198,157,184,.65),transparent 35%),linear-gradient(145deg,#211a27,#49354d 65%,#a88b9e)}
+ .hero:after{right:5%;top:12%;font-size:18px}
+ .hero h1{font-size:clamp(48px,14vw,76px)}
+ .section{padding:58px 6vw}
+ .cards{grid-template-columns:1fr}
+ .card,.card.dark{border-right:0;border-bottom:1px solid #b9aab3;min-height:0;padding:24px 8px}
+ .stagegrid{grid-template-columns:1fr}
+ .stage,.stage:last-child{border-right:0;border-bottom:1px solid #b4a2af}
+ .library-grid{grid-template-columns:1fr}
+ .library-card:nth-child(odd){border-right:0}
+ .workspace-grid{grid-template-columns:1fr 1fr}
+ .approach>div{padding:45px 6vw}
+}
+@media(max-width:420px){.workspace-grid{grid-template-columns:1fr}.emoveo-brand .brand-word{font-size:23px}}
+
 </style>
 </head>
 <body>
 <header class="header app-header">
-  <a class="brand" href="#dashboard">Pilates <span>by emoveo</span></a>
+  <a class="brand emoveo-brand" href="#dashboard" aria-label="emoveo — главная"><img src="assets/emoveo-mark.svg" alt="" width="42" height="42"><span class="brand-word">emoveo</span><span class="brand-sub">PILATES · MOVEMENT ARCHIVE</span></a>
   <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">Меню разделов</button>
   <nav id="primary-navigation" aria-label="Навигация по рабочему пространству">
     <a href="#dashboard">Главная</a><a href="#planner">Планировщик</a><a href="#library">Упражнения</a><a href="#templates">Шаблоны</a><a href="#clients">Клиенты</a><a href="#schedule">Расписание</a><a href="#history">История</a><a href="#settings">Настройки</a>
