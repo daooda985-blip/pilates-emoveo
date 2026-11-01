@@ -13,8 +13,8 @@ An elegant, restrained, slightly uncanny movement archive. The interface should 
 Use a high-contrast serif for editorial headlines and a clean sans-serif for controls, labels and technical information. Keep navigation uppercase and tracked, but maintain readable sizes.
 ## Graphic vocabulary
 Broken circles / enso, petal geometry, orbital paths, breath lines, small vermilion marks, subtle grain, botanical silhouettes. Avoid generic lotus clip-art, gradients on every surface, excessive rounded cards and decorative kanji without meaning.
-## Mascot: Mori
-Mori is an abstract seed-spirit / folded petal, not a human or animal. It appears as a quiet observer and guide. Use sparingly: welcome states, empty states, short hints, loading / transition moments. No speech bubbles by default. Avoid infantilizing proportions or cartoon expressions.
+## Mascot status
+The mascot is a planned product feature, but its name and final visual identity are intentionally undecided. The earlier name “Mori” and seed/petal sketch are provisional experiments only, not approved canon. Develop the character gradually with the user before replacing the placeholder or making it prominent in the interface.
 ## Symbol semantics
 呼吸 (breath) may label breathing practices; 身 (body) may label body awareness. Use only where the context genuinely matches. Do not use decorative random characters.
 ## Responsive behavior
