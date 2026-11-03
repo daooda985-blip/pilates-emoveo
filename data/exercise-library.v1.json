@@ -560,14 +560,15 @@
         "prone",
         "shoulders"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Prone+W+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=_i36cFWfgTw",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены.",
+      "demonstration_source": "Prone W — Riser Physical Therapy exercise library"
     },
     {
       "id": "POST_006",
@@ -1253,15 +1254,16 @@
         "spine",
         "kneeling"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Child's+Pose+with+Reach+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=b-NajvUmDFU",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "позвоночник и подвижность",
         "растяжка и восстановление"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены.",
+      "demonstration_source": "Best Stretches: Child's Pose with Reach — Dr. Jonathon Ross"
     },
     {
       "id": "STR_002",
