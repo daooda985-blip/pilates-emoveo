@@ -413,14 +413,14 @@
         "scapular_control",
         "supine"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Scapular+Protraction%E2%80%93Retraction+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://youtu.be/6-c5vRhgdyQ",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Конкретный ролик найден в учебном приложении к исследованию по мат-базированным упражнениям Pilates: Supine Scapular Protraction/Retraction. Название и положение лёжа соответствуют карточке."
     },
     {
       "id": "POST_002",
@@ -594,14 +594,14 @@
         "wall",
         "mobility"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Wall+Slides+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://youtu.be/Eaj_NG5_hIo",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Конкретная демонстрация Wall Slide найдена в подборке упражнений для осанки и плечевого пояса. Движение руками по стене соответствует карточке."
     },
     {
       "id": "POST_007",
@@ -994,14 +994,14 @@
         "side_lying",
         "hips"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Side-Lying+Leg+Lift+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=b-T5Bzhn1sw",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Конкретная демонстрация Side Lying Leg Lift опубликована в списке видео Barts Health NHS Trust. Название и положение лёжа на боку соответствуют карточке."
     },
     {
       "id": "LEGS_004",
@@ -1067,14 +1067,14 @@
         "standing",
         "functional"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Bodyweight+Squat+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=AMvT25RFFGQ",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "ноги и голеностоп"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Конкретная демонстрация Squat опубликована в списке видео Barts Health NHS Trust. Базовое приседание с весом собственного тела соответствует карточке."
     },
     {
       "id": "LEGS_006",
