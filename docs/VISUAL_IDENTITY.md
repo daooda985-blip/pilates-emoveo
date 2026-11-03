@@ -14,7 +14,7 @@ Use a high-contrast serif for editorial headlines and a clean sans-serif for con
 ## Graphic vocabulary
 Broken circles / enso, petal geometry, orbital paths, breath lines, small vermilion marks, subtle grain, botanical silhouettes. Avoid generic lotus clip-art, gradients on every surface, excessive rounded cards and decorative kanji without meaning.
 ## Mascot status
-The mascot is a planned product feature, but its name and final visual identity are intentionally undecided. The earlier name “Mori” and seed/petal sketch are provisional experiments only, not approved canon. Develop the character gradually with the user before replacing the placeholder or making it prominent in the interface.
+The current mascot concept image is approved as the working visual direction, not as a final production asset. The working name is Mia (Миа), still provisional. The character is a curious, kind, slightly unusual hybrid of creature, plant and abstract energy. Her world, culture and music concept are documented in `docs/WORLD_MIA.md`. Do not promote the older `assets/mori-mascot.svg` placeholder as approved artwork.
 ## Symbol semantics
 呼吸 (breath) may label breathing practices; 身 (body) may label body awareness. Use only where the context genuinely matches. Do not use decorative random characters.
 ## Responsive behavior
