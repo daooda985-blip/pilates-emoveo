@@ -29,9 +29,11 @@
     // The two 15-second rests count toward class duration; 5–10-second transitions do not.
     const restMinutes = REST_BREAKS_SECONDS.reduce((sum, seconds) => sum + seconds, 0) / 60;
     const activeTotal = round1(Math.max(0, total - restMinutes));
+    // Round both 25% stages symmetrically; let the larger main stage absorb the half-minute remainder.
     const warm = Math.round(activeTotal * 0.25 * 2) / 2;
-    const main = Math.round(activeTotal * 0.50 * 2) / 2;
-    return { warm_up: warm, main, stretch: round1(activeTotal - warm - main) };
+    const stretch = Math.round(activeTotal * 0.25 * 2) / 2;
+    const main = round1(activeTotal - warm - stretch);
+    return { warm_up: warm, main, stretch };
   }
   function hasEquipment(card, equipment) {
     const e = (card.equipment || "").toLowerCase();
