@@ -51,13 +51,14 @@
         "supine",
         "low_load"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Diaphragmatic+Breathing+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "дыхание"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "WARM_002",
@@ -86,13 +87,14 @@
         "supine",
         "mobility"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Pelvic+Tilts+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "WARM_003",
@@ -121,13 +123,14 @@
         "supine",
         "mobility"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Arm+Slides+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "WARM_004",
@@ -155,13 +158,14 @@
         "standing_or_sitting",
         "low_load"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Shoulder+Rolls+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "WARM_005",
@@ -191,14 +195,15 @@
         "supine",
         "coordination"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Marching+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус",
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "MOB_001",
@@ -227,13 +232,14 @@
         "quadruped",
         "breath"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Cat%E2%80%93Cow+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "дыхание"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "MOB_002",
@@ -262,13 +268,14 @@
         "side_lying",
         "mobility"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Open+Book+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "позвоночник и подвижность"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "MOB_003",
@@ -297,13 +304,14 @@
         "supine",
         "rotation"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Knee+Rolls+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "общая подвижность"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "MOB_004",
@@ -332,14 +340,15 @@
         "quadruped",
         "core_control"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Quadruped+Thoracic+Rotation+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус",
         "позвоночник и подвижность"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "MOB_005",
@@ -368,13 +377,14 @@
         "sitting",
         "low_load"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Seated+Spinal+Elongation+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "позвоночник и подвижность"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "POST_001",
@@ -403,13 +413,14 @@
         "scapular_control",
         "supine"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Scapular+Protraction%E2%80%93Retraction+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "POST_002",
@@ -438,13 +449,14 @@
         "mobility",
         "supine"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Arm+Opening+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "POST_003",
@@ -473,13 +485,14 @@
         "posture",
         "sitting"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Seated+Scapular+Retraction+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "POST_004",
@@ -508,13 +521,14 @@
         "prone",
         "shoulders"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Prone+Arm+Lifts+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "POST_005",
@@ -544,13 +558,14 @@
         "prone",
         "shoulders"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Prone+W+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "POST_006",
@@ -579,13 +594,14 @@
         "wall",
         "mobility"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Wall+Slides+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "POST_007",
@@ -614,13 +630,14 @@
         "sitting",
         "mobility"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Seated+Thoracic+Rotation+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "позвоночник и подвижность"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "CORE_001",
@@ -648,13 +665,14 @@
         "supine",
         "low_load"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Heel+Slides+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "CORE_002",
@@ -683,14 +701,15 @@
         "supine",
         "coordination"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Dead+Bug+Heel+Taps+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус",
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "CORE_003",
@@ -718,13 +737,14 @@
         "supine",
         "low_load"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+March+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "CORE_004",
@@ -754,14 +774,15 @@
         "coordination",
         "higher_control"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Dead+Bug+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус",
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "CORE_005",
@@ -790,14 +811,15 @@
         "quadruped",
         "coordination"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Bird+Dog+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус",
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "CORE_006",
@@ -827,13 +849,14 @@
         "side_lying",
         "isometric"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Modified+Side+Plank+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "CORE_007",
@@ -863,13 +886,14 @@
         "kneeling",
         "isometric"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Knee+Plank+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "LEGS_001",
@@ -898,13 +922,14 @@
         "hips",
         "supine"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Glute+Bridge+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "LEGS_002",
@@ -933,13 +958,14 @@
         "side_lying",
         "hips"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Clamshell+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "LEGS_003",
@@ -968,13 +994,14 @@
         "side_lying",
         "hips"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Side-Lying+Leg+Lift+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "LEGS_004",
@@ -1003,14 +1030,15 @@
         "side_lying",
         "coordination"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Side-Lying+Leg+Circles+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы",
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "LEGS_005",
@@ -1039,13 +1067,14 @@
         "standing",
         "functional"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Bodyweight+Squat+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "ноги и голеностоп"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "LEGS_006",
@@ -1074,14 +1103,15 @@
         "standing",
         "balance"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supported+Reverse+Lunge+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "ноги и голеностоп",
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "BAL_001",
@@ -1110,13 +1140,14 @@
         "standing",
         "low_load"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Standing+Weight+Shift+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "BAL_002",
@@ -1146,13 +1177,14 @@
         "standing",
         "support"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supported+Single-Leg+Balance+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "BAL_003",
@@ -1180,14 +1212,15 @@
         "ankle",
         "standing"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Heel-Toe+Raises+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "ноги и голеностоп",
         "баланс и координация"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "STR_001",
@@ -1217,14 +1250,15 @@
         "spine",
         "kneeling"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Child's+Pose+with+Reach+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "позвоночник и подвижность",
         "растяжка и восстановление"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "STR_002",
@@ -1253,13 +1287,14 @@
         "chest",
         "side_lying"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Side-Lying+Chest+Stretch+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "растяжка и восстановление"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "STR_003",
@@ -1288,13 +1323,14 @@
         "hamstrings",
         "supine"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Hamstring+Stretch+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "растяжка и восстановление"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "STR_004",
@@ -1322,14 +1358,15 @@
         "glutes",
         "supine"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Figure-Four+Stretch+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы",
         "растяжка и восстановление"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "STR_005",
@@ -1358,13 +1395,14 @@
         "side_body",
         "sitting"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Seated+Side+Stretch+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "растяжка и восстановление"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "STR_006",
@@ -1393,14 +1431,15 @@
         "hips",
         "kneeling"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Half-Kneeling+Hip+Flexor+Stretch+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы",
         "растяжка и восстановление"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     },
     {
       "id": "STR_007",
@@ -1429,13 +1468,14 @@
         "relaxation",
         "supine"
       ],
-      "demonstration_url": null,
-      "demonstration_status": "needs_exact_video_verification",
+      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Relaxation+Pilates+exercise+demonstration",
+      "demonstration_status": "youtube_search_link_not_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "растяжка и восстановление"
-      ]
+      ],
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
     }
   ]
 }
