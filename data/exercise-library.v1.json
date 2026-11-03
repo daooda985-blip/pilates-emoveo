@@ -701,15 +701,15 @@
         "supine",
         "coordination"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Dead+Bug+Heel+Taps+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=ms67sX3YUU0",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус",
         "баланс и координация"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Keep It Moving PT & Wellness — Dead Bug Heel Taps. Описанная техника: положение tabletop и поочерёдное касание пола пяткой; соответствует упражнению."
     },
     {
       "id": "CORE_003",
@@ -1212,15 +1212,15 @@
         "ankle",
         "standing"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Heel-Toe+Raises+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=JegXz_XPgwk",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "ноги и голеностоп",
         "баланс и координация"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Arthritis Foundation — Walk With Ease: Seated Heel Toe Raises. Демонстрирует подъём носков и пяток; вариант сидя, поэтому подходит как наглядная демонстрация паттерна, но не полностью повторяет положение стоя из карточки."
     },
     {
       "id": "STR_001",
@@ -1323,14 +1323,14 @@
         "hamstrings",
         "supine"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Hamstring+Stretch+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=QL8FK8CsGc8",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "растяжка и восстановление"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Pain Therapy — Supine Hamstring Stretch. Демонстрируется растяжка задней поверхности бедра лёжа на спине."
     },
     {
       "id": "STR_004",
