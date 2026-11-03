@@ -232,14 +232,14 @@
         "quadruped",
         "breath"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Cat%E2%80%93Cow+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=D41_YWSBQhA",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "дыхание"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Cat Cow. Название и движение соответствуют карточке."
     },
     {
       "id": "MOB_002",
@@ -268,14 +268,14 @@
         "side_lying",
         "mobility"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Open+Book+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=YggCTIawob0",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "позвоночник и подвижность"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Book Openings. Демонстрируется раскрытие грудного отдела лёжа на боку."
     },
     {
       "id": "MOB_003",
@@ -774,15 +774,15 @@
         "coordination",
         "higher_control"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Dead+Bug+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=qxY_0Wrkxw8",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус",
         "баланс и координация"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Dead Bug. Демонстрируется упражнение «мёртвый жук»."
     },
     {
       "id": "CORE_005",
@@ -922,14 +922,14 @@
         "hips",
         "supine"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Glute+Bridge+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=D4JE3LB_zTM",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Basic Bridge. Демонстрируется базовый ягодичный мост."
     },
     {
       "id": "LEGS_002",
@@ -958,14 +958,14 @@
         "side_lying",
         "hips"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Clamshell+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=1DyDJNVIKXw",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Clam. Демонстрируется упражнение «ракушка» лёжа на боку."
     },
     {
       "id": "LEGS_003",
@@ -1030,15 +1030,15 @@
         "side_lying",
         "coordination"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Side-Lying+Leg+Circles+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=q7ze6b2oDz0",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы",
         "баланс и координация"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Leg Circles. Демонстрируются круги ногой."
     },
     {
       "id": "LEGS_005",
@@ -1177,14 +1177,14 @@
         "standing",
         "support"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Supported+Single-Leg+Balance+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=8ubsyrGRUas",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "баланс и координация"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Star Balance. Это усложнённый вариант баланса на одной ноге; использовать как ориентир, сохраняя опору при необходимости."
     },
     {
       "id": "BAL_003",
@@ -1358,15 +1358,15 @@
         "glutes",
         "supine"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Figure-Four+Stretch+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=u_zns-UCyfo",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы",
         "растяжка и восстановление"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Lying Glute Stretch. Показан вариант растяжки ягодичной области; положение может отличаться от точной «четвёрки»."
     },
     {
       "id": "STR_005",
@@ -1431,15 +1431,15 @@
         "hips",
         "kneeling"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Half-Kneeling+Hip+Flexor+Stretch+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=pekWkfJuyig",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы",
         "растяжка и восстановление"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео Complete Pilates: Hip Flexor Stretch. Демонстрируется растяжка сгибателей бедра."
     },
     {
       "id": "STR_007",
