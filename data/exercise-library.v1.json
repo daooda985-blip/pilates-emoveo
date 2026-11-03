@@ -87,14 +87,14 @@
         "supine",
         "mobility"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Pelvic+Tilts+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=Kbz2KR3j670",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "таз и ягодичные мышцы"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Конкретный ролик найден: Physio REHAB — LM | Pelvic Tilts (Supine). Положение лёжа на спине с согнутыми коленями и мягкий наклон таза соответствуют карточке; видео проверено по названию и описанию."
     },
     {
       "id": "WARM_003",
@@ -158,14 +158,14 @@
         "standing_or_sitting",
         "low_load"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Shoulder+Rolls+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=owuZIbrTyok&t=20s",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Конкретный ролик найден: Performance Fit Pilates — Best Seated Pilates Shoulder Workout with Weights. Круговые движения плечами есть в видео на отметке 00:20; ссылка открывает нужный фрагмент."
     },
     {
       "id": "WARM_005",
