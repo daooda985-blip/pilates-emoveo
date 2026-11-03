@@ -340,15 +340,16 @@
         "quadruped",
         "core_control"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Quadruped+Thoracic+Rotation+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=cLEI3hm98PA",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "корпус",
         "позвоночник и подвижность"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены.",
+      "demonstration_source": "Quadruped Thoracic Rotation — Physical Therapy First"
     },
     {
       "id": "MOB_005",
@@ -1103,15 +1104,16 @@
         "standing",
         "balance"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Supported+Reverse+Lunge+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=gWuZrnxtKDs",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "ноги и голеностоп",
         "баланс и координация"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены.",
+      "demonstration_source": "Supported Reverse Lunge — Exercise Demonstration"
     },
     {
       "id": "BAL_001",
