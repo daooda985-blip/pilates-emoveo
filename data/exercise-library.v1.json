@@ -451,14 +451,15 @@
         "mobility",
         "supine"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Arm+Opening+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=_yLXLFUy0iM",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Показан вариант движения лёжа на спине: сгибание и скольжение рук; это близкая демонстрация, не точное раскрытие прямых рук в стороны.",
+      "demonstration_source": "Pilates: Arm windows — Rehab My Patient"
     },
     {
       "id": "POST_003",
@@ -487,14 +488,15 @@
         "posture",
         "sitting"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Seated+Scapular+Retraction+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=bCcfTGTdZXk",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Вариант сидя с эластичной лентой; движение сведения лопаток совпадает, сопротивление отличается от базовой версии.",
+      "demonstration_source": "Seated scapular retraction — ExerciseNow"
     },
     {
       "id": "POST_004",
@@ -523,14 +525,15 @@
         "prone",
         "shoulders"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Prone+Arm+Lifts+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=FPcc4iig0dA",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "плечевой пояс и верх спины"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Видео включает несколько упражнений; описание источника прямо указывает Prone Arm Lifts как один из сегментов.",
+      "demonstration_source": "Prone Arm Lifts — NW Personal Training"
     },
     {
       "id": "POST_005",
