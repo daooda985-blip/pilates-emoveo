@@ -1150,14 +1150,15 @@
         "standing",
         "low_load"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Standing+Weight+Shift+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=BpFvOf9fcok",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "баланс и координация"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Прямая демонстрация переноса веса из стороны в сторону стоя; сохранять корпус вертикальным, движение выполнять за счёт переноса нагрузки между ногами.",
+      "demonstration_source": "Exercise 5: Weight Shifting—Lateral — Balance Pros"
     },
     {
       "id": "BAL_002",
