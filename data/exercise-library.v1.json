@@ -1298,14 +1298,15 @@
         "chest",
         "side_lying"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Side-Lying+Chest+Stretch+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=rFOaFgcTC_U",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "растяжка и восстановление"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Демонстрация раскрытия грудной клетки лёжа на боку с поворотом верхней руки; соответствует карточке.",
+      "demonstration_source": "Side-lying Chest Stretch — Dynamic Grit Fitness"
     },
     {
       "id": "STR_003",
