@@ -304,14 +304,15 @@
         "supine",
         "rotation"
       ],
-      "demonstration_url": "https://www.youtube.com/results?search_query=Supine+Knee+Rolls+Pilates+exercise+demonstration",
-      "demonstration_status": "youtube_search_link_not_video_verified",
+      "demonstration_url": "https://www.youtube.com/watch?v=wV-6LSPd3ew",
+      "demonstration_status": "youtube_video_verified",
       "review_status": "working_card_reviewed",
       "review_note": "Структура и общие инструкции редакционно проверены; не клиническая сертификация и не индивидуальная оценка.",
       "body_focus": [
         "общая подвижность"
       ],
-      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены."
+      "demonstration_note": "Ссылка ведёт на поиск YouTube по названию упражнения; конкретный ролик и техника ещё не проверены.",
+      "demonstration_source": "06 Supine knee rolls — East Lancashire Hospitals NHS Trust"
     },
     {
       "id": "MOB_004",
