@@ -2,7 +2,6 @@
 (function (root) {
   "use strict";
   const STAGE_ORDER = ["warm_up", "main", "stretch"];
-  const DEFAULT_SPLIT = { warm_up: 15, main: 30, stretch: 15 };
   const REST_BREAKS_SECONDS = [15, 15];
   const STEP = 0.5;
   const round1 = n => Math.round(n * 10) / 10;
@@ -27,10 +26,14 @@
     };
   }
   function stageSplit(total) {
-    if (total === 60) return { ...DEFAULT_SPLIT };
-    const warm = Math.round(total * 0.25 * 2) / 2;
-    const main = Math.round(total * 0.50 * 2) / 2;
-    return { warm_up: warm, main, stretch: round1(total - warm - main) };
+    // The two 15-second rests count toward class duration; 5–10-second transitions do not.
+    const restMinutes = REST_BREAKS_SECONDS.reduce((sum, seconds) => sum + seconds, 0) / 60;
+    const activeTotal = round1(Math.max(0, total - restMinutes));
+    // Round both 25% stages symmetrically; let the larger main stage absorb the half-minute remainder.
+    const warm = Math.round(activeTotal * 0.25 * 2) / 2;
+    const stretch = Math.round(activeTotal * 0.25 * 2) / 2;
+    const main = round1(activeTotal - warm - stretch);
+    return { warm_up: warm, main, stretch };
   }
   function hasEquipment(card, equipment) {
     const e = (card.equipment || "").toLowerCase();
