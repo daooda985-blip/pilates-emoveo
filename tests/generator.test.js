@@ -17,6 +17,32 @@ for (const total of durations) {
     `Main stage must remain the largest stage for ${total} minutes`);
 }
 
+// Verify that generated duration accounting exposes shortages instead of hiding them.
+for (const totalMinutes of durations) {
+  const plan = generator.generate(library, {
+    totalMinutes,
+    level: "medium",
+    goals: ["posture", "core", "arms", "legs"],
+    equipment: ["mat"],
+    random: () => 0.314159
+  });
+  const remaining = plan.stages.reduce((sum, stage) => sum + stage.remainingMinutes, 0);
+
+  assert.ok(plan.estimatedTotalMinutesIncludingBreaks <= totalMinutes + 0.001,
+    `The generated plan must not exceed ${totalMinutes} minutes`);
+  assert.ok(Math.abs(plan.estimatedTotalMinutesIncludingBreaks + remaining - totalMinutes) < 0.001,
+    `Selected time plus visible shortages must account for the ${totalMinutes}-minute target`);
+
+  for (const stage of plan.stages) {
+    assert.equal(stage.complete, stage.remainingMinutes <= 0.01,
+      `Stage completion flag must match its remaining time for ${totalMinutes} minutes`);
+  }
+  if (remaining > 0.01) {
+    assert.ok(plan.validation.warnings.some(warning => warning.includes("короче цели")),
+      `A ${totalMinutes}-minute plan with a shortage must show a validation warning`);
+  }
+}
+
 const card = id => {
   const found = library.cards.find(item => item.id === id);
   assert.ok(found, `Expected exercise card ${id}`);
