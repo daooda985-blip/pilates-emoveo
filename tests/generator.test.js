@@ -57,6 +57,14 @@ assert.equal(generator.canUseCard(card("STR_003"), {
   stage: "stretch", equipment: ["mat"]
 }), true, "An optional strap must not be required");
 
+assert.equal(generator.canUseCard(card("POST_003"), {
+  stage: "main", equipment: ["mat"]
+}), true, "An optional chair must not be required");
+
+assert.equal(generator.canUseCard(card("MOB_005"), {
+  stage: "main", equipment: ["mat"]
+}), true, "A chair listed as needed only when necessary must remain optional");
+
 assert.equal(generator.canUseCard(card("POST_006"), {
   stage: "main", equipment: ["mat"]
 }), false, "A wall-required exercise must be filtered without a wall");
